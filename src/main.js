@@ -1,8 +1,9 @@
 // ASSETS
-import './assets/sass/style.scss';
+import 'sass/style';
 import Vue from 'vue';
-import App from './App.vue';
+import App from './App';
 import { router } from './router';
+import { TweenMax } from 'greensock';
 
 // RENDER
 new Vue({

@@ -16,8 +16,9 @@ const mode = "production";
 
 // OUTPUT
 const output = {
-    path: path.resolve(__dirname, '../dist'),
-    filename: 'assets/js/[name][contenthash:5].js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'assets/js/[name][contenthash:5].js',
+    publicPath: '/'
 };
 
 // OPTIMIZATION
@@ -31,7 +32,12 @@ const _module = {
         {
             test: /\.css$/,
             use: [
-                MiniCssExtractPlugin.loader,
+                {
+                    loader: 'vue-style-loader'
+                },
+                {
+                    loader: MiniCssExtractPlugin.loader
+                },
                 {
                  loader: 'css-loader?url=false',
                  options: { sourceMap: true }   
@@ -46,7 +52,12 @@ const _module = {
         test: /\.(scss|sass)$/,
         exclude: /node_modules/,
         use: [
-            MiniCssExtractPlugin.loader,
+            {
+                loader: 'vue-style-loader'
+            },
+            {
+               loader: MiniCssExtractPlugin.loader,
+            },
             {
                 loader: 'css-loader?url=false',
                 options: { sourceMap: true }

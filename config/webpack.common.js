@@ -16,6 +16,7 @@ const VENODE_LIBS = [
     "bootstrap",
     "jquery",
     "popper.js",
+    "greensock",
     "vue",
     "vue-resource",
     "vuex",
@@ -52,18 +53,41 @@ const optimization = {
 // DEVTOOL
 const devtool = 'inline-source-map';
 
+// RESOLVE
+const resolve = {
+    extensions: ['.css', '.sass', '.scss', '.vue', '.js', '.json'],
+    alias: {
+        'sass': path.resolve(__dirname, '../src/assets/sass')
+    }
+};
+
 // MODULE RULES
 const _module = {
     rules: [
         {
-            use: 'babel-loader',
-            test: /\.js$/
+            test: /\.(png|jpg|jpeg|svg|gif)$/i,
+            use: 'url-loader'
+        },
+        {
+            test: /\.js$/,
+            use: 'babel-loader'
         },
         {
             test: /\.vue$/,
-            use: [{
-                loader: 'vue-loader'
-            }]
+            use: [
+                {
+                    loader: 'vue-loader',
+                    options: {
+                        transformAssetUrls: {
+                            video: ['src', 'poster'],
+                            source: 'src',
+                            img: 'src',
+                            image: ['xlink:href', 'href'],
+                            use: ['xlink:href', 'href']
+                        }
+                    }
+                }
+            ]
         }
     ]
 };
@@ -86,6 +110,7 @@ module.exports = {
     performance,
     optimization,
     devtool,
+    resolve,
     module: _module,
     plugins
 }

@@ -33,13 +33,22 @@ const devServer = {
 const _module = {
     rules: [{
             test: /\.css$/,
-            use: [{
-                loader: 'css-loader',
-            }]
+            use: [
+                {
+                    loader: 'vue-style-loader'
+                },
+                {
+                    loader: 'css-loader',
+                }
+            ]
         },
         {
             test: /\.(sass|scss)$/,
-            use: [{
+            use: [
+                {
+                    loader: 'vue-style-loader'
+                },
+                {
                     loader: MiniCssExtractPlugin.loader
                 },
                 {
