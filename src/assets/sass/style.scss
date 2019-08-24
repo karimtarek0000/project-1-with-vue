@@ -1,1 +1,45 @@
-@import './components/test.scss';
+// Variables
+@import "abstract/variables";
+
+// Mixin
+@import "abstract/mixin";
+
+//FUNCTION
+@import "abstract/function";
+
+// Components
+@import "components/navbar";
+@import "components/buttons";
+
+// Utilities
+@import "base/base";
+@import "base/utilities";
+@import "base/animation";
+
+// layout
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+
+// Pages
+@import "pages/home";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,11 +1,19 @@
 <template>
   <div>
-    <h1>test home</h1>
+    <app-header></app-header>
   </div>
 </template>
 
 <script>
-export default {};
+
+// ALL IMPORT
+import Header from '../components/Header.vue';
+
+export default {
+  components: {
+    appHeader: Header,
+  }
+};
 </script>
 
 <style>
