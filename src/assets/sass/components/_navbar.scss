@@ -2,95 +2,127 @@
 .navbar {
   position: absolute;
   width: 100%;
-  @include translate('top', 'left', 0, 0);
+  @include translate("top", "left", 0, 0);
   z-index: 200;
 
   // NAVBAR NOTE
-    &_note {
-        font-size: 2rem;
-        background-color: $two-color;
-        height: 7rem;
+  &_note {
+    font-size: 2rem;
+    background-color: $two-color;
+    height: 7rem;
 
-        // NAVBAR NOTE CONTENT
-        &_content {
-            height: 100%;
-            display: flex;
-            align-items: center;
+    // NAVBAR NOTE CONTENT
+    &_content {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    // NAVBAR NOTE PARGARPH
+    &_paragraph {
+      font-size: 1em;
+      color: $font-color-three;
+      font-weight: 700;
+    }
+
+    // NAVBAR NOTE CLOSE
+    &_close {
+      margin-left: auto;
+      width: 3rem;
+      height: 3rem;
+      line-height: 3rem;
+      border-radius: 50%;
+      background-color: $first-color;
+      text-align: center;
+
+      // NAVBAR NOTE ICON
+      &_icon {
+        display: block;
+        color: black;
+      }
+    }
+  }
+
+  // NAVBAR PRIMARY
+  &_primary {
+    height: 12.1rem;
+    font-size: 2rem;
+    background-color: $tree-color;
+    color: white;
+
+    // NAVBAR PRIMARY BOX
+    &_box {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: black;
+
+      // NAVBAR DIRECT CHILD :FIRST CHILD
+      & > :first-child {
+        border-bottom: 1px solid $two-color;
+      }
+
+      // NAVBAR PRIMARY BOX DIRECT CHILD
+      & > * {
+        font-size: 0.75em;
+      }
+    }
+
+    // NAVBAR PRIMARY INFO
+    &_info {
+      padding-bottom: 1em;
+
+      // NAVBAR PRIMARY INFO DIRECT CHILD
+      & > * {
+        display: inline-block;
+      }
+
+      // NAVBAR PRIMARY INFO TITLE
+      &_title {
+      }
+
+      // NAVBAR PRIMARY INFO EMAIL
+      &_email {
+        margin-left: 2.5em;
+
+        // NAVBAR PRIMARY INFO EMAIL DIRECT CHILD SPAN
+        & > span {
+          color: red;
+          font-weight: 700;
         }
+      }
+    }
 
-        // NAVBAR NOTE PARGARPH
-        &_paragraph {
-            font-size: 1em;
-            color: $font-color-three;
+    // NAVBAR PRIMARY NAV
+    &_nav {
+      padding-top: 1em;
+      display: flex;
+      align-items: center;
+
+      // NAVBAR PRIMARY NAV LOGO
+      &_logo {
+        // NAVBAR PRIMARY NAV LOGO SVG
+        & svg {
+          width: 10rem;
+          height: 2rem;
+        }
+      }
+
+      // NAVBAR PRIMARY NAV ITEMS
+      &_items {
+        margin-left: auto;
+        text-transform: capitalize;
+
+        // NAVBAR PRIMARY NAV ITEMS DIRECT CHILD LI
+        & > li {
+            display: inline-block;
+            font-size: 1.2em;
             font-weight: 700;
+            padding: 0 .9em;
+            cursor: pointer;
         }
-
-        // NAVBAR NOTE CLOSE
-        &_close {
-            margin-left: auto;
-            width: 3rem;
-            height: 3rem;
-            line-height: 3rem;
-            border-radius: 50%;
-            background-color: $first-color;
-            text-align: center;
-            
-            // NAVBAR NOTE ICON
-            &_icon {
-                display: block;
-                color: black;
-            }
-        }
-
+      }
     }
-
-    // NAVBAR PRIMARY
-    &_primary {
-        height: 12.1rem;
-        font-size: 2rem;
-        background-color: $tree-color;
-        color: white;
-
-        // NAVBAR PRIMARY BOX
-        &_box {
-            height: 100%;
-            display: flex;
-            flex-flow: wrap column;
-            justify-content: center;
-            color: black;
-
-            // NAVBAR DIRECT CHILD :FIRST CHILD
-            & > :first-child{
-                border-bottom: 1px solid $two-color;
-            }
-
-            & > * {
-                font-size: .75em;
-            }
-        }
-
-        // NAVBAR PRIMARY INFO
-        &_info {
-            padding-bottom: 1em;
-
-            &_title {
-
-            }
-
-            &_email {
-
-
-                & > span {
-                    
-                }
-            }
-        }
-
-        // NAVBAR PRIMARY NAV
-        &_nav {
-            padding-top: 1em;
-        }
-
-    }
-
+  }
 }
