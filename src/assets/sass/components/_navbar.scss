@@ -1,4 +1,96 @@
-.nav {
-    background-color: red;
-    padding: 1rem;
+// NAVBAR
+.navbar {
+  position: absolute;
+  width: 100%;
+  @include translate('top', 'left', 0, 0);
+  z-index: 200;
+
+  // NAVBAR NOTE
+    &_note {
+        font-size: 2rem;
+        background-color: $two-color;
+        height: 7rem;
+
+        // NAVBAR NOTE CONTENT
+        &_content {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        // NAVBAR NOTE PARGARPH
+        &_paragraph {
+            font-size: 1em;
+            color: $font-color-three;
+            font-weight: 700;
+        }
+
+        // NAVBAR NOTE CLOSE
+        &_close {
+            margin-left: auto;
+            width: 3rem;
+            height: 3rem;
+            line-height: 3rem;
+            border-radius: 50%;
+            background-color: $first-color;
+            text-align: center;
+            
+            // NAVBAR NOTE ICON
+            &_icon {
+                display: block;
+                color: black;
+            }
+        }
+
+    }
+
+    // NAVBAR PRIMARY
+    &_primary {
+        height: 12.1rem;
+        font-size: 2rem;
+        background-color: $tree-color;
+        color: white;
+
+        // NAVBAR PRIMARY BOX
+        &_box {
+            height: 100%;
+            display: flex;
+            flex-flow: wrap column;
+            justify-content: center;
+            color: black;
+
+            // NAVBAR DIRECT CHILD :FIRST CHILD
+            & > :first-child{
+                border-bottom: 1px solid $two-color;
+            }
+
+            & > * {
+                font-size: .75em;
+            }
+        }
+
+        // NAVBAR PRIMARY INFO
+        &_info {
+            padding-bottom: 1em;
+
+            &_title {
+
+            }
+
+            &_email {
+
+
+                & > span {
+                    
+                }
+            }
+        }
+
+        // NAVBAR PRIMARY NAV
+        &_nav {
+            padding-top: 1em;
+        }
+
+    }
+
 }
