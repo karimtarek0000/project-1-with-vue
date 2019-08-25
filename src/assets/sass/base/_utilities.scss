@@ -2,3 +2,16 @@
 .list-unstyled {
     list-style: none;
 }
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.reset-link:link, .reset-link:visited {
+    text-decoration: none;
+    display: inline-block;
+}

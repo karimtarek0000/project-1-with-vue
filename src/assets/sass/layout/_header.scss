@@ -1,29 +1,111 @@
+// HEADER
 .header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: $first-color;
+  overflow: hidden;
+  
+  // HEADER ::AFTER AND BEFORE
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    height: inherit;
+  }
+
+  // HEADER BEFORE
+  &::before {
+    background: url(../img/header/header-woman.png) no-repeat left top;
+    width: 56%;
+    @include translate("bottom", "right", 0, 0);
+    z-index: 100;
+  }
+
+  // HEADER AFTER
+  &::after {
+    width: inherit;
+    background: url(../img/header/header-after.png) no-repeat center;
+    @include translate("bottom", "left", 0, 0);
+  }
+
+  // HEADER BOX
+  &_box {
+    display: flex;
+    align-items: center;
     height: 100vh;
     width: 100%;
-    background-color: $first-color;
+  }
 
+  // HEADER CONTENT
+  &_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    min-width: 50%;
+    text-align: center;
+    height: 100vh;
+    font-size: 2rem;
+    @include translate("top", "left", 0, 20%);
+    z-index: 100;
+    // background-color: white;
 
-    &::after {
-        content: '';
-        position: absolute;
-        height: inherit;
-        width: inherit;
-        background-image: url(../img/header-after.png);
-        @include translate('top', 'left', 0, 0);
+    @include respond(phone) {
+        width: 100%;
+        @include translate("top", "left", 0, 0);
+        font-size: 3rem;
+    }
+  }
+
+  // HEADER TITLE
+  &_title {
+    position: relative;
+    overflow: hidden;
+    font-size: 3.5em;
+    font-weight: $font-weight-head;
+
+    &_1,
+    &_2,
+    &_3 {
+      display: block;
     }
 
-    &_box {
-        
+    &_1,
+    &_2 {
+      letter-spacing: -0.1em;
     }
 
+    &_1 {
+      color: $font-color-two;
+    }
 
+    &_3 {
+      letter-spacing: 2em;
+      text-indent: 2.2em;
+      font-size: 0.5em;
+    }
 
+    &_2,
+    &_3 {
+      color: $font-color-one;
+      margin-top: -0.4em;
+    }
+  }
 
+  // HEADER PARAGRAPH
+  &_paragraph {
+    font-size: 0.7em;
+    margin: 0.5em 0 0.9em 0;
+    color: $font-color-one;
+    font-weight: 400;
+    line-height: $line-height-paragraph;
+  }
 
-
-
-
-
-
+  // HEADER BUTTON :LINK AND VISITED
+  &_button:link,
+  &_button:visited {
+    margin: 0 auto;
+  }
 }
