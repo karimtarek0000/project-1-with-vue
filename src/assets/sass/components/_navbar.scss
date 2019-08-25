@@ -116,11 +116,41 @@
 
         // NAVBAR PRIMARY NAV ITEMS DIRECT CHILD LI
         & > li {
-            display: inline-block;
-            font-size: 1.2em;
-            font-weight: 700;
-            padding: 0 .9em;
-            cursor: pointer;
+          display: inline-block;
+          font-size: 1.2em;
+          font-weight: 700;
+          padding: 0 0.9em;
+          cursor: pointer;
+        }
+      }
+
+      &_search {
+        position: relative;
+        width: 30px;
+
+        & > input[type="search"] {
+          display: none;
+          position: absolute;
+          @include translate('top', 'right', 0, 100%);
+          width: 300px;
+        }
+
+        & > button {
+          vertical-align: middle;
+
+          & > svg {
+            width: 2.3rem;
+            height: 2.3rem;
+          }
+        }
+      }
+
+      &_shapping {
+
+
+        & > svg {
+            width: 2rem;
+            height: 2rem;
         }
       }
     }
