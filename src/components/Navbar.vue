@@ -53,7 +53,13 @@
 
             <!-- NAVBAR PRIMARY NAV ITEMS -->
             <ul id="navbar-primary" class="navbar_primary_nav_items list-unstyled">
-              <router-link v-for="item in navbarItems" tag="li" :to="item" active-class="test">{{ item == '/'? item = 'home': item }}</router-link>
+              <router-link
+                v-for="item in navbarItems"
+                tag="li"
+                :to="item"
+                exact
+                active-class="navbar_primary_nav_items--itemactive"
+              >{{ item == '/'? item = 'home': item }}</router-link>
             </ul>
 
             <!-- NAVBAR PRIMARY NAV SEARCH -->
@@ -76,12 +82,9 @@
               </button>
             </form>
 
-            <div class="navbar_primary_nav_shapping">
-              <svg class="navbar_primary_nav_shapping_icon">
-                <title>shapping</title>
-                <use xlink:href="../assets/img/sprit.svg#icon-shopping-cart" />
-              </svg>
-            </div>
+            <!-- NAVBAR PRIMARY NAV SHAPPING -->
+            <app-shapping-card></app-shapping-card>
+            
           </div>
           <!-- END NAVBAR PRIMARY NAV -->
         </div>
@@ -94,22 +97,24 @@
 </template>
 
 <script>
+
+import ShappingCard from './ShappingCard';
+
 export default {
   data() {
     return {
-      navbarItems: ['/', 'shop', 'product', 'blog', 'portfolio', 'page'],
+      navbarItems: ["/", "shop", "product", "blog", "portfolio", "page"],
       statusHover: true
     };
   },
   methods: {
     animationSearchHome() {
       if (this.statusHover) {
-
         // ALL VARIABLES
         const searchIcon = document.getElementById("home-button-search");
         const searchInput = document.getElementById("home-search");
         const navbarItems = document.getElementById("navbar-primary").children;
-        
+
         let tl = new TimelineMax();
 
         // TIME LINE ANIMATION
@@ -141,8 +146,10 @@ export default {
         // IF USER BLUR INPUT
         searchInput.addEventListener("blur", option);
       }
-    },
-
+    }
+  },
+  components: {
+    appShappingCard: ShappingCard
   }
 };
 </script>
