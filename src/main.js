@@ -3,7 +3,7 @@ import 'sass/style';
 import Vue from 'vue';
 import App from './App';
 import { router } from './router';
-import { TweenMax } from 'greensock';
+import { TweenMax, TimelineMax } from 'greensock';
 
 // RENDER
 new Vue({

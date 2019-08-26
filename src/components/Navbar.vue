@@ -1,12 +1,9 @@
 <template>
   <nav class="navbar">
-
     <!-- START NAVBAR NOTE -->
     <div class="navbar_note">
-
       <!-- START CONTAINER -->
       <div class="container">
-
         <!-- START NAVBAR NOTE CONTENT -->
         <div class="navbar_note_content">
           <!-- NAVBAR NOTE PARAGRAPH -->
@@ -18,25 +15,19 @@
           <div class="navbar_note_close">
             <span class="navbar_note_close_icon">&times;</span>
           </div>
-       
         </div>
         <!-- END NAVBAR NOTE CONTENT -->
-
       </div>
       <!-- END CONTAINER -->
-
     </div>
     <!-- END NAVBAR NOTE -->
 
     <!-- START NAVBAR NAV -->
     <div class="navbar_primary">
-
       <!-- START CONTAINER -->
       <div class="container">
-
         <!-- START NAVBAR PRIMARY BOX -->
         <div class="navbar_primary_box">
-
           <!-- START NAVBAR PRIMARY INFO -->
           <div class="navbar_primary_info">
             <!-- NAVBAR PRIMARY INFO TITLE -->
@@ -52,7 +43,6 @@
 
           <!-- START NAVBAR PRIMARY NAV -->
           <div class="navbar_primary_nav">
-
             <!-- NAVBAR PRIMARY NAV LOGO -->
             <router-link class="navbar_primary_nav_logo" tag="a" to="/">
               <svg class>
@@ -62,7 +52,7 @@
             </router-link>
 
             <!-- NAVBAR PRIMARY NAV ITEMS -->
-            <ul class="navbar_primary_nav_items list-unstyled">
+            <ul id="navbar-primary" class="navbar_primary_nav_items list-unstyled">
               <router-link tag="li" to="/" active-class="test">home</router-link>
               <router-link tag="li" to="/shop" active-class="test">shop</router-link>
               <router-link tag="li" to="/product" active-class="test">product</router-link>
@@ -74,43 +64,90 @@
             <!-- NAVBAR PRIMARY NAV SEARCH -->
             <form class="navbar_primary_nav_search">
               <!-- INPUT SEARCH -->
-              <input type="search" />
+              <input id="home-search" class="reset-input" type="search" />
 
               <!-- BUTTON SUBMIT -->
-              <button class="reset-button" type="submit">
+              <button
+                @mouseout="statusHover = false"
+                @mouseover="animationSearchHome"
+                class="reset-button"
+                id="home-button-search"
+                type="submit"
+              >
                 <svg>
                   <use xlink:href="../assets/img/sprit.svg#icon-search1" />
-                    <title>search</title>
+                  <title>search</title>
                 </svg>
               </button>
             </form>
 
             <div class="navbar_primary_nav_shapping">
-
-                <svg class="navbar_primary_nav_shapping_icon">
-                    <title>shapping</title>
-                    <use xlink:href="../assets/img/sprit.svg#icon-shopping-cart"/>
-                </svg>
-
+              <svg class="navbar_primary_nav_shapping_icon">
+                <title>shapping</title>
+                <use xlink:href="../assets/img/sprit.svg#icon-shopping-cart" />
+              </svg>
             </div>
-
           </div>
           <!-- END NAVBAR PRIMARY NAV -->
-
         </div>
         <!-- END NAVBAR PRIMARY BOX -->
-
       </div>
       <!-- END CONTAINER -->
-
     </div>
     <!-- END NAVBAR NAV -->
-
   </nav>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      statusHover: true
+    };
+  },
+  methods: {
+    animationSearchHome() {
+      if (this.statusHover) {
+
+        // ALL VARIABLES
+        const searchIcon = document.getElementById("home-button-search");
+        const searchInput = document.getElementById("home-search");
+        const navbarItems = document.getElementById("navbar-primary").children;
+        
+        let tl = new TimelineMax();
+
+        // TIME LINE ANIMATION
+        tl.staggerTo(
+          navbarItems,
+          0.5,
+          { y: 10, autoAlpha: 0, ease: Power1.easeInOut },
+          0.1
+        ).fromTo(
+          searchInput,
+          0.5,
+          { width: "0%", autoAlpha: 0 },
+          { width: "50%", autoAlpha: 1, ease: Power1.easeInOut }
+        );
+
+        // FUNCTION OPTION ALL ADD EVENT LISTENER
+        const option = () => {
+          tl.reverse();
+          searchInput.value = "";
+          this.statusHover = true;
+        };
+
+        // IF USER CLICK WINDOW
+        window.addEventListener("click", option);
+
+        // IF USER CLICK IN INPUT FIELD NOT CLOSE INPUT
+        searchInput.addEventListener("click", e => e.stopPropagation());
+
+        // IF USER BLUR INPUT
+        searchInput.addEventListener("blur", option);
+      }
+    }
+  }
+};
 </script>
 
 <style>

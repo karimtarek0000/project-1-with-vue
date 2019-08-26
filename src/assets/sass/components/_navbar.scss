@@ -45,10 +45,8 @@
 
   // NAVBAR PRIMARY
   &_primary {
-    height: 12.1rem;
     font-size: 2rem;
     background-color: $tree-color;
-    color: white;
 
     // NAVBAR PRIMARY BOX
     &_box {
@@ -71,7 +69,9 @@
 
     // NAVBAR PRIMARY INFO
     &_info {
-      padding-bottom: 1em;
+      height: 6.05rem;
+      display: flex;
+      align-items: center;
 
       // NAVBAR PRIMARY INFO DIRECT CHILD
       & > * {
@@ -96,7 +96,8 @@
 
     // NAVBAR PRIMARY NAV
     &_nav {
-      padding-top: 1em;
+      position: relative;
+      height: 6.05rem;
       display: flex;
       align-items: center;
 
@@ -125,14 +126,14 @@
       }
 
       &_search {
-        position: relative;
         width: 30px;
 
         & > input[type="search"] {
-          display: none;
           position: absolute;
-          @include translate('top', 'right', 0, 100%);
-          width: 300px;
+          @include translate('top', 'right', 50%, 5%);
+          width: 0%;
+          height: 100%;
+          font-size: 2em;
         }
 
         & > button {

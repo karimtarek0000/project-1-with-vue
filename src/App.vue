@@ -5,6 +5,7 @@
 
     <!-- VIEW ROUTER -->
     <router-view></router-view>
+
   </div>
 </template>
 

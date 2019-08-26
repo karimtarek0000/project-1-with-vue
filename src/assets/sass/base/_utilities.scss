@@ -1,23 +1,32 @@
 // LIST UNSTYLED
 .list-unstyled {
-    list-style: none;
+  list-style: none;
 }
 
 .text-capitalize {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .text-uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
-.reset-link:link, .reset-link:visited {
-    text-decoration: none;
-    display: inline-block;
+.reset-link:link,
+.reset-link:visited {
+  text-decoration: none;
+  display: inline-block;
 }
 
 .reset-button {
-    background: none;
-    outline: none;
-    border: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.reset-input {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  font-family: inherit;
 }
