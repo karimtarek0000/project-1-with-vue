@@ -53,12 +53,7 @@
 
             <!-- NAVBAR PRIMARY NAV ITEMS -->
             <ul id="navbar-primary" class="navbar_primary_nav_items list-unstyled">
-              <router-link tag="li" to="/" active-class="test">home</router-link>
-              <router-link tag="li" to="/shop" active-class="test">shop</router-link>
-              <router-link tag="li" to="/product" active-class="test">product</router-link>
-              <router-link tag="li" to="/blog" active-class="test">blog</router-link>
-              <router-link tag="li" to="/portfolio" active-class="test">portfolio</router-link>
-              <router-link tag="li" to="/page" active-class="test">page</router-link>
+              <router-link v-for="item in navbarItems" tag="li" :to="item" active-class="test">{{ item == '/'? item = 'home': item }}</router-link>
             </ul>
 
             <!-- NAVBAR PRIMARY NAV SEARCH -->
@@ -102,6 +97,7 @@
 export default {
   data() {
     return {
+      navbarItems: ['/', 'shop', 'product', 'blog', 'portfolio', 'page'],
       statusHover: true
     };
   },
@@ -145,10 +141,12 @@ export default {
         // IF USER BLUR INPUT
         searchInput.addEventListener("blur", option);
       }
-    }
+    },
+
   }
 };
 </script>
 
 <style>
+
 </style>
