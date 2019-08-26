@@ -114,31 +114,45 @@
       &_items {
         margin-left: auto;
         text-transform: capitalize;
+        align-self: stretch;
+        display: flex;
+        align-items: stretch;
 
         // NAVBAR PRIMARY NAV ITEMS DIRECT CHILD LI
         & > li {
           display: inline-block;
+          color: $font-color-two;
           font-size: 1.2em;
           font-weight: 700;
           padding: 0 0.9em;
+          line-height: 6.025rem;
           cursor: pointer;
+        }
+
+        &--itemactive {
+          background-color: $two-color;
+          color: $font-color-three!important;
         }
       }
 
+      // NAVBAR PRIMARY NAV SEARCH
       &_search {
         width: 30px;
 
+        // NAVBAR PRIMARY NAV SEARCH INPUT[ SEARCH ]
         & > input[type="search"] {
           position: absolute;
-          @include translate('top', 'right', 50%, 5%);
+          @include translate("top", "right", 50%, 5%);
           width: 0%;
           height: 100%;
           font-size: 2em;
         }
 
+        // NAVBAR PRIMARY NAV BUTTON
         & > button {
           vertical-align: middle;
 
+          // NAVBAR PRIMARY NAV SVG
           & > svg {
             width: 2.3rem;
             height: 2.3rem;
@@ -146,13 +160,96 @@
         }
       }
 
+      ////////////////////////////////////////
+      // NAVBAR PRIMARY NAV SHAPPING
       &_shapping {
-
-
+        // NAVBAR PRIMARY NAV SVG
         & > svg {
-            width: 2rem;
-            height: 2rem;
+          width: 2rem;
+          height: 2rem;
         }
+
+        // NAVBAR PRIMARY NAV SHAPPING ICON
+        &_icon {
+          cursor: pointer;
+          user-select: none;
+        }
+
+        // NAVBAR PRIMARY NAV SHAPPING BOX
+        &_boxs {
+          position: absolute;
+          width: 30%;
+          @include translate('top', 'right', 100%, 0);
+          background-color: $four-color;
+          padding: .3em;
+        }
+
+        &_box {
+          position: relative;
+          margin-top: .5em;
+          display: flex;
+        }
+
+        &_close {
+          position: absolute;
+          @include translate('top', 'right', 0, 0);
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          background-color: $four-color;
+          color: $font-color-two;
+          text-align: center;
+          line-height: 2rem;
+          font-size: 1.5em;
+          cursor: pointer;
+        }
+
+        // NAVBAR PRIMARY NAV SHAPPING IMAGE
+        &_image {
+          height: 100%;
+
+          & > img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+          }
+        }
+
+        // NAVBAR PRIMARY NAV SHAPPING CONTENT
+        &_content {
+          width: 100%;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-transform: capitalize;
+        }
+
+        // NAVBAR PRIMARY NAV SHAPPING NAME PRODUCT
+        &_name_product {
+        }
+
+        // NAVBAR PRIMARY NAV SHAPPING PRODUCT PRICE
+        &_product_price {
+          padding: .8em 0; 
+        }
+
+        &_rating {
+
+          &_icons {
+            display: inline-block;
+
+            & > svg {
+              width: 15px;
+              height: 15px;
+            }
+
+          }
+
+        }
+
       }
     }
   }
