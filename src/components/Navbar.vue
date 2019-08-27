@@ -45,28 +45,12 @@
             </div>
 
             <!-- NAVBAR PRIMARY INFO OPTIONS -->
-            <div class="navbar_primary_info_options">
+            <div class="navbar_primary_info_options text-uppercase">
               <!-- NAVBAR PRIMARY INFO OPTIONS LANG -->
-              <div class="navbar_primary_info_options_lang navbar_primary_info_options--box">
+              <div id="optionsLang" class="navbar_primary_info_options_lang navbar_primary_info_options--box">
                 <!-- NAVBAR PRIMARY INFO OPTIONS ICON -->
-                <div class="navbar_primary_info_options_icon">
+                <div class="navbar_primary_info_options_icon" @click="animationOptionsList">
                   <span class="navbar_primary_info_options_title">en</span>
-                  <i class="fas fa-angle-down"></i>
-                </div>
-
-                <!-- NAVBAR PRIMARY INFO OPTIONS SELECT -->
-                <!-- <ul class="navbar_primary_info_options_select list-unstyled">
-                  <li class="navbar_primary_info_options_select_item">test 1</li>
-                  <li class="navbar_primary_info_options_select_item">test 2</li>
-                  <li class="navbar_primary_info_options_select_item">test 3</li>
-                </ul> -->
-              </div>
-
-              <!-- NAVBAR PRIMARY INFO OPTIONS CUR -->
-              <div class="navbar_primary_info_options_cur navbar_primary_info_options--box">
-                <!-- NAVBAR PRIMARY INFO OPTIONS ICON -->
-                <div class="navbar_primary_info_options_icon">
-                  <span class="navbar_primary_info_options_title">usd</span>
                   <i class="fas fa-angle-down"></i>
                 </div>
 
@@ -75,6 +59,22 @@
                   <li class="navbar_primary_info_options_select_item">test 1</li>
                   <li class="navbar_primary_info_options_select_item">test 2</li>
                   <li class="navbar_primary_info_options_select_item">test 3</li>
+                </ul>
+              </div>
+
+              <!-- NAVBAR PRIMARY INFO OPTIONS CUR -->
+              <div id="optionsCur" class="navbar_primary_info_options_cur navbar_primary_info_options--box">
+                <!-- NAVBAR PRIMARY INFO OPTIONS ICON -->
+                <div class="navbar_primary_info_options_icon" @click="animationOptionsList">
+                  <span class="navbar_primary_info_options_title">usd</span>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+
+                <!-- NAVBAR PRIMARY INFO OPTIONS SELECT -->
+                <ul class="navbar_primary_info_options_select list-unstyled">
+                  <li class="navbar_primary_info_options_select_item">eur</li>
+                  <li class="navbar_primary_info_options_select_item">usd</li>
+                  <li class="navbar_primary_info_options_select_item">egp</li>
                 </ul>
               </div>
             </div>
@@ -146,6 +146,7 @@ export default {
     };
   },
   methods: {
+    // ANIMATION SEARCH HOME
     animationSearchHome() {
       if (this.statusHover) {
         // ALL VARIABLES
@@ -184,10 +185,60 @@ export default {
         // IF USER BLUR INPUT
         searchInput.addEventListener("blur", option);
       }
+    },
+
+    // ANIMATION OPTIONS LIST
+    animationOptionsList(e) {
+
+      // TIME LINE TWEEN MAX
+      const tl = new TimelineMax();
+
+      // const childParent = Array.from(e.target.closest('i').parentElement.parentElement.children);
+      const childParent = e.target.closest('i').parentElement.parentElement.children;
+
+
+      // const h = childParent;
+
+      for(const cur in childParent) {
+        
+        if(childParent[cur].nodeName == 'UL') {
+          childParent[cur].style.height = '100px';
+          console.log('yes');
+        }
+
+      }
+
+      
+      
     }
+
   },
   components: {
     appShappingCard: ShappingCard
+  },
+  mounted() {
+    const listOption = () => {
+      const optionLang = document.getElementById('optionsLang');
+      const optionCur = document.getElementById('optionsCur');
+
+      const allOptions = [optionLang, optionCur];
+
+      allOptions.forEach( cur => cur.addEventListener('click', () => {
+
+        if( cur.id == 'optionsLang') {
+
+          console.log('option lang');
+
+        } else if( cur.id == 'optionsCur') {
+
+          console.log('option cur');
+
+        }
+      }));
+
+        
+    }
+    // listOption();
   }
 };
 </script>
