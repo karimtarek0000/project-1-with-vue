@@ -124,7 +124,6 @@
         }
 
         &_title {
-          text-transform: uppercase;
         }
 
         &_icon {
@@ -137,11 +136,13 @@
           background-color: $four-color;
           color: $font-color-two;
           text-align: center;
-          text-transform: capitalize;
           border-radius: 5px;
           box-shadow: 0 2px 7px rgba(black, .5);
           margin-top: .5em;
           z-index: 100;
+          overflow: hidden;
+          // height: 0;
+          // transition: all 1s ease-in-out;
 
           &_item {
             padding: .5em 4em;
