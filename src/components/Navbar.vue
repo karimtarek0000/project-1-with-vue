@@ -18,7 +18,7 @@
         </div>
         <!-- END NAVBAR NOTE CONTENT -->
       </div>
-      <!-- END CONTAINER -->
+      <!-- END NAVBAR NOTE BOX -->
     </div>
     <!-- END NAVBAR NOTE -->
 
@@ -30,14 +30,54 @@
         <div class="navbar_primary_box">
           <!-- START NAVBAR PRIMARY INFO -->
           <div class="navbar_primary_info">
-            <!-- NAVBAR PRIMARY INFO TITLE -->
-            <p class="navbar_primary_info_title text-capitalize">hello guys! welcome to me shop</p>
+            <!-- NAVBAR PRIMARY INFO CONTENT -->
+            <div class="navbar_primary_info_content">
+              <!-- NAVBAR PRIMARY INFO TITLE -->
+              <p
+                class="navbar_primary_info_content_title text-capitalize"
+              >hello guys! welcome to me shop</p>
 
-            <!-- NAVBAR PRIMARY INFO EMAIL -->
-            <p class="navbar_primary_info_email text-capitalize">
-              email:
-              <span>free@psdfreebies.com</span>
-            </p>
+              <!-- NAVBAR PRIMARY INFO EMAIL -->
+              <p class="navbar_primary_info_content_email text-capitalize">
+                email:
+                <span>free@psdfreebies.com</span>
+              </p>
+            </div>
+
+            <!-- NAVBAR PRIMARY INFO OPTIONS -->
+            <div class="navbar_primary_info_options">
+              <!-- NAVBAR PRIMARY INFO OPTIONS LANG -->
+              <div class="navbar_primary_info_options_lang navbar_primary_info_options--box">
+                <!-- NAVBAR PRIMARY INFO OPTIONS ICON -->
+                <div class="navbar_primary_info_options_icon">
+                  <span class="navbar_primary_info_options_title">en</span>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+
+                <!-- NAVBAR PRIMARY INFO OPTIONS SELECT -->
+                <!-- <ul class="navbar_primary_info_options_select list-unstyled">
+                  <li class="navbar_primary_info_options_select_item">test 1</li>
+                  <li class="navbar_primary_info_options_select_item">test 2</li>
+                  <li class="navbar_primary_info_options_select_item">test 3</li>
+                </ul> -->
+              </div>
+
+              <!-- NAVBAR PRIMARY INFO OPTIONS CUR -->
+              <div class="navbar_primary_info_options_cur navbar_primary_info_options--box">
+                <!-- NAVBAR PRIMARY INFO OPTIONS ICON -->
+                <div class="navbar_primary_info_options_icon">
+                  <span class="navbar_primary_info_options_title">usd</span>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+
+                <!-- NAVBAR PRIMARY INFO OPTIONS SELECT -->
+                <ul class="navbar_primary_info_options_select list-unstyled">
+                  <li class="navbar_primary_info_options_select_item">test 1</li>
+                  <li class="navbar_primary_info_options_select_item">test 2</li>
+                  <li class="navbar_primary_info_options_select_item">test 3</li>
+                </ul>
+              </div>
+            </div>
           </div>
           <!-- END NAVBAR PRIMARY INFO -->
 
@@ -84,7 +124,6 @@
 
             <!-- NAVBAR PRIMARY NAV SHAPPING -->
             <app-shapping-card></app-shapping-card>
-            
           </div>
           <!-- END NAVBAR PRIMARY NAV -->
         </div>
@@ -97,8 +136,7 @@
 </template>
 
 <script>
-
-import ShappingCard from './ShappingCard';
+import ShappingCard from "./ShappingCard";
 
 export default {
   data() {
@@ -155,5 +193,4 @@ export default {
 </script>
 
 <style>
-
 </style>
