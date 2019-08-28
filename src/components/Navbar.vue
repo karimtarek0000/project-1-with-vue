@@ -47,15 +47,22 @@
             <!-- NAVBAR PRIMARY INFO OPTIONS -->
             <div class="navbar_primary_info_options text-uppercase">
               <!-- NAVBAR PRIMARY INFO OPTIONS LANG -->
-              <div id="optionsLang" class="navbar_primary_info_options_lang navbar_primary_info_options--box">
+              <div
+                id="optionsLang"
+                class="navbar_primary_info_options_lang navbar_primary_info_options--box"
+              >
                 <!-- NAVBAR PRIMARY INFO OPTIONS ICON -->
-                <div class="navbar_primary_info_options_icon" @click="animationOptionsList">
-                  <span class="navbar_primary_info_options_title">en</span>
+                <div
+                  id="lang"
+                  class="navbar_primary_info_options_icon"
+                  @click="animationOptionsList"
+                >
+                  <span class="navbar_primary_info_options_title">{{ lang }}</span>
                   <i class="fas fa-angle-down"></i>
                 </div>
 
                 <!-- NAVBAR PRIMARY INFO OPTIONS SELECT -->
-                <ul class="navbar_primary_info_options_select list-unstyled">
+                <ul @click="getDataSelect" class="navbar_primary_info_options_select list-unstyled">
                   <li class="navbar_primary_info_options_select_item">test 1</li>
                   <li class="navbar_primary_info_options_select_item">test 2</li>
                   <li class="navbar_primary_info_options_select_item">test 3</li>
@@ -63,15 +70,22 @@
               </div>
 
               <!-- NAVBAR PRIMARY INFO OPTIONS CUR -->
-              <div id="optionsCur" class="navbar_primary_info_options_cur navbar_primary_info_options--box">
+              <div
+                id="optionsCur"
+                class="navbar_primary_info_options_cur navbar_primary_info_options--box"
+              >
                 <!-- NAVBAR PRIMARY INFO OPTIONS ICON -->
-                <div class="navbar_primary_info_options_icon" @click="animationOptionsList">
-                  <span class="navbar_primary_info_options_title">usd</span>
+                <div
+                  id="cur"
+                  class="navbar_primary_info_options_icon"
+                  @click="animationOptionsList"
+                >
+                  <span class="navbar_primary_info_options_title">{{ cur }}</span>
                   <i class="fas fa-angle-down"></i>
                 </div>
 
                 <!-- NAVBAR PRIMARY INFO OPTIONS SELECT -->
-                <ul class="navbar_primary_info_options_select list-unstyled">
+                <ul @click="getDataSelect" class="navbar_primary_info_options_select list-unstyled">
                   <li class="navbar_primary_info_options_select_item">eur</li>
                   <li class="navbar_primary_info_options_select_item">usd</li>
                   <li class="navbar_primary_info_options_select_item">egp</li>
@@ -142,7 +156,9 @@ export default {
   data() {
     return {
       navbarItems: ["/", "shop", "product", "blog", "portfolio", "page"],
-      statusHover: true
+      statusHover: true,
+      lang: "en",
+      cur: "usd"
     };
   },
   methods: {
@@ -189,56 +205,88 @@ export default {
 
     // ANIMATION OPTIONS LIST
     animationOptionsList(e) {
+      const childParent = e.target.closest(":not(div)").parentElement
+        .parentElement.children;
 
-      // TIME LINE TWEEN MAX
-      const tl = new TimelineMax();
+      // ACCESS ELEMENT WITH FOR ES6
+      for (const cur in childParent) {
+        // IF ELEMENT EQUAL TAG UL
+        if (childParent[cur].nodeName == "UL") {
+          // CONST ELEMENT
+          const element = childParent[cur];
 
-      // const childParent = Array.from(e.target.closest('i').parentElement.parentElement.children);
-      const childParent = e.target.closest('i').parentElement.parentElement.children;
+          // TRIGGER ANIAMTION WITH TWEENMAX
+          if (!childParent[cur].classList.contains("active")) {
+            // ADD CLASS ACTIVE TO ELEMENT
+            childParent[cur].classList.add("active");
 
+            // CREATE ANIAMTION OPEN LIST ITEM
+            TweenMax.set(element, { height: "auto" });
+            TweenMax.from(element, 1, { height: 0, ease: Power1.easeInOut });
+          } else {
+            // REMOVE CLASS ACTIVE FROM ELEMENT
+            childParent[cur].classList.remove("active");
 
-      // const h = childParent;
-
-      for(const cur in childParent) {
-        
-        if(childParent[cur].nodeName == 'UL') {
-          childParent[cur].style.height = '100px';
-          console.log('yes');
+            // CREATE ANIMATION CLOSE LIST ITEM
+            TweenMax.fromTo(
+              element,
+              1,
+              { height: "auto" },
+              { height: 0, ease: Power1.easeInOut }
+            );
+          }
         }
+      }
+    },
 
+    //
+    getDataSelect(e) {
+      let getData = e.target.textContent;
+      const parent = e.target.parentElement.parentElement.children;
+      const parentSelect = e.target.parentElement;
+
+      for (const cur in parent) {
+        if (parent[cur].id == "cur") {
+          this.cur = getData;
+          if (parent[cur].children[cur].nodeName == "SPAN") {
+            parent[cur].children[cur].textContent = this.cur;
+
+            // RUNNING FUNCTION
+            closeList();
+          }
+        } else if (parent[cur].id == "lang") {
+          this.lang = getData;
+          if (parent[cur].children[cur].nodeName == "SPAN") {
+            parent[cur].children[cur].textContent = this.lang;
+
+            // RUNNING FUNCTION
+            closeList();
+          }
+        }
       }
 
-      
-      
-    }
+      // CLOSE LIST
+      function closeList() {
+        // ADD CLASS ACTIVE TO ELEMENT
+        parentSelect.classList.remove("active");
 
+        // CREATE ANIMATION CLOSE LIST ITEM
+        TweenMax.fromTo(
+          parentSelect,
+          1,
+          { height: "auto" },
+          { height: 0, ease: Power1.easeInOut }
+        );
+      }
+    }
+  },
+  watch: {
+    cur() {
+      // console.log('watch');
+    }
   },
   components: {
     appShappingCard: ShappingCard
-  },
-  mounted() {
-    const listOption = () => {
-      const optionLang = document.getElementById('optionsLang');
-      const optionCur = document.getElementById('optionsCur');
-
-      const allOptions = [optionLang, optionCur];
-
-      allOptions.forEach( cur => cur.addEventListener('click', () => {
-
-        if( cur.id == 'optionsLang') {
-
-          console.log('option lang');
-
-        } else if( cur.id == 'optionsCur') {
-
-          console.log('option cur');
-
-        }
-      }));
-
-        
-    }
-    // listOption();
   }
 };
 </script>
