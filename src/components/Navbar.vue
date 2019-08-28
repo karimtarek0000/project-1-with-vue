@@ -63,9 +63,7 @@
 
                 <!-- NAVBAR PRIMARY INFO OPTIONS SELECT -->
                 <ul @click="getDataSelect" class="navbar_primary_info_options_select list-unstyled">
-                  <li class="navbar_primary_info_options_select_item">test 1</li>
-                  <li class="navbar_primary_info_options_select_item">test 2</li>
-                  <li class="navbar_primary_info_options_select_item">test 3</li>
+                  <li class="navbar_primary_info_options_select_item" v-for="lang in arrayLang">{{ lang }}</li>
                 </ul>
               </div>
 
@@ -86,9 +84,7 @@
 
                 <!-- NAVBAR PRIMARY INFO OPTIONS SELECT -->
                 <ul @click="getDataSelect" class="navbar_primary_info_options_select list-unstyled">
-                  <li class="navbar_primary_info_options_select_item">eur</li>
-                  <li class="navbar_primary_info_options_select_item">usd</li>
-                  <li class="navbar_primary_info_options_select_item">egp</li>
+                  <li class="navbar_primary_info_options_select_item" v-for="cur in arrayCur">{{ cur }}</li>
                 </ul>
               </div>
             </div>
@@ -123,6 +119,7 @@
 
               <!-- BUTTON SUBMIT -->
               <button
+                @click="animationSearchHome"
                 @mouseout="statusHover = false"
                 @mouseover="animationSearchHome"
                 class="reset-button"
@@ -156,14 +153,21 @@ export default {
   data() {
     return {
       navbarItems: ["/", "shop", "product", "blog", "portfolio", "page"],
+      arrayLang: ['en', 'fr', 'ar', 'co'],
+      arrayCur: ['egp', 'usd', 'eur'],
       statusHover: true,
+      statusClick: true,
       lang: "en",
       cur: "usd"
     };
   },
   methods: {
     // ANIMATION SEARCH HOME
-    animationSearchHome() {
+    animationSearchHome(e) {
+
+      // IF STATUS CLICK EQUAL TRUE WILL CONVERT PREVENT DEFAULT IF NO WILL CONVERT FALSE NO PREVENT DEFAULT
+      if(this.statusClick) e.preventDefault();
+
       if (this.statusHover) {
         // ALL VARIABLES
         const searchIcon = document.getElementById("home-button-search");
@@ -188,12 +192,20 @@ export default {
         // FUNCTION OPTION ALL ADD EVENT LISTENER
         const option = () => {
           tl.reverse();
+          if(!searchInput.value == "") this.statusClick = false;
           searchInput.value = "";
           this.statusHover = true;
         };
 
         // IF USER CLICK WINDOW
         window.addEventListener("click", option);
+
+        // IF USER KEY DOWN KEY CODE ENETER SEARCH WILL STATUS CLICK CONVERT FALSE AND CLEAR PREVENT DEFAULT
+        searchInput.addEventListener("keydown", e => {
+          if (e.keyCode == 13) {
+            if (!searchInput.value == "") this.statusClick = false;
+          }
+        });
 
         // IF USER CLICK IN INPUT FIELD NOT CLOSE INPUT
         searchInput.addEventListener("click", e => e.stopPropagation());
@@ -239,7 +251,7 @@ export default {
       }
     },
 
-    //
+    // GET DATA SELECT LIST
     getDataSelect(e) {
       let getData = e.target.textContent;
       const parent = e.target.parentElement.parentElement.children;
@@ -278,11 +290,6 @@ export default {
           { height: 0, ease: Power1.easeInOut }
         );
       }
-    }
-  },
-  watch: {
-    cur() {
-      // console.log('watch');
     }
   },
   components: {
