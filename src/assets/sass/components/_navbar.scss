@@ -96,56 +96,59 @@
         }
       }
 
+      // NAVBAR PRIMARY INFO OPTIONS
       &_options {
         margin-left: auto;
 
+        // NAVBAR PRIMARY INFO OPTIONS ALL DIRECT CHILD
         & > * {
           display: inline-block;
         }
 
-        &_lang {
-          
-        }
-
+        // NAVBAR PRIMARY INFO OPTIONS BOX
         &--box {
           position: relative;
 
           &:first-child {
-            
             .navbar_primary_info_options_icon {
               margin-right: 1em;
             }
-
           }
         }
 
-        &_cur {
-
+        // NAVBAR PRIMARY INFO OPTIONS LANG
+        &_lang {
         }
 
+        // NAVBAR PRIMARY INFO OPTIONS CUR
+        &_cur {
+        }
+
+        // NAVBAR PRIMARY INFO OPTIONS TITLE
         &_title {
         }
 
+        // NAVBAR PRIMARY INFO OPTIONS ICON
         &_icon {
-
         }
 
+        // NAVBAR PRIMARY INFO OPTIONS SELECT
         &_select {
           position: absolute;
-          @include translate('top', 'right', 100%, 0);
+          @include translate("top", "right", 100%, 0);
           background-color: $four-color;
           color: $font-color-two;
           text-align: center;
           border-radius: 5px;
-          box-shadow: 0 2px 7px rgba(black, .5);
-          margin-top: .5em;
+          box-shadow: 0 2px 7px rgba(black, 0.5);
+          margin-top: 0.5em;
           z-index: 100;
           overflow: hidden;
-          // height: 0;
-          // transition: all 1s ease-in-out;
+          height: 0;
 
+          // NAVBAR PRIMARY INFO OPTIONS SELECT ITEM
           &_item {
-            padding: .5em 4em;
+            padding: 0.5em 4em;
             width: 20rem;
           }
         }
