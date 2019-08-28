@@ -130,6 +130,7 @@
 
         // NAVBAR PRIMARY INFO OPTIONS ICON
         &_icon {
+          cursor: pointer;
         }
 
         // NAVBAR PRIMARY INFO OPTIONS SELECT
@@ -140,7 +141,7 @@
           color: $font-color-two;
           text-align: center;
           border-radius: 5px;
-          box-shadow: 0 2px 7px rgba(black, 0.5);
+          box-shadow: $shadow;
           margin-top: 0.5em;
           z-index: 100;
           overflow: hidden;
@@ -150,6 +151,7 @@
           &_item {
             padding: 0.5em 4em;
             width: 20rem;
+            cursor: pointer;
           }
         }
       }
