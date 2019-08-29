@@ -1,6 +1,5 @@
 <template>
   <nav class="navbar">
-    
     <!-- START NAVBAR NOTE -->
     <app-note-bar></app-note-bar>
     <!-- END NAVBAR NOTE -->
@@ -46,7 +45,10 @@
 
                 <!-- NAVBAR PRIMARY INFO OPTIONS SELECT -->
                 <ul @click="getDataSelect" class="navbar_primary_info_options_select list-unstyled">
-                  <li class="navbar_primary_info_options_select_item" v-for="lang in arrayLang">{{ lang }}</li>
+                  <li
+                    class="navbar_primary_info_options_select_item"
+                    v-for="lang in arrayLang"
+                  >{{ lang }}</li>
                 </ul>
               </div>
 
@@ -67,7 +69,10 @@
 
                 <!-- NAVBAR PRIMARY INFO OPTIONS SELECT -->
                 <ul @click="getDataSelect" class="navbar_primary_info_options_select list-unstyled">
-                  <li class="navbar_primary_info_options_select_item" v-for="cur in arrayCur">{{ cur }}</li>
+                  <li
+                    class="navbar_primary_info_options_select_item"
+                    v-for="cur in arrayCur"
+                  >{{ cur }}</li>
                 </ul>
               </div>
             </div>
@@ -98,7 +103,14 @@
             <!-- NAVBAR PRIMARY NAV SEARCH -->
             <form class="navbar_primary_nav_search">
               <!-- INPUT SEARCH -->
-              <input id="home-search" class="reset-input" type="search" />
+              <input
+                id="home-search"
+                ref="inputsearch"
+                @focus="validationInputResponsive"
+                class="reset-input"
+                type="search"
+                autocomplete="off"
+              />
 
               <!-- BUTTON SUBMIT -->
               <button
@@ -119,13 +131,9 @@
             <!-- START NAVBAR PRIMARY NAV SHAPPING -->
             <app-shapping-card></app-shapping-card>
             <!-- END NAVBAR PRIMARY NAV SHAPPING -->
-
-            <div class="navbar_primary_nav_toggle">
-              <span class="navbar_primary_nav_toggle_icon navbar_primary_nav_toggle_icon--1"></span>
-              <span class="navbar_primary_nav_toggle_icon navbar_primary_nav_toggle_icon--2"></span>
-              <span class="navbar_primary_nav_toggle_icon navbar_primary_nav_toggle_icon--3"></span>
-            </div>
-
+            <!-- START NAVBAR PRIMART NAV TOGGLE -->
+            <app-button-toggle></app-button-toggle>
+            <!-- END NAVBAR PRIMART NAV TOGGLE -->
           </div>
           <!-- END NAVBAR PRIMARY NAV -->
         </div>
@@ -138,15 +146,17 @@
 </template>
 
 <script>
-import NoteBar from './NoteBar';
+// ALL IMPORT
+import NoteBar from "./NoteBar";
 import ShappingCard from "./ShappingCard";
+import ButtonToggle from "./ButtonToggle";
 
 export default {
   data() {
     return {
       navbarItems: ["/", "shop", "product", "blog", "portfolio", "page"],
-      arrayLang: ['en', 'fr', 'ar', 'co'],
-      arrayCur: ['egp', 'usd', 'eur'],
+      arrayLang: ["en", "fr", "ar", "co"],
+      arrayCur: ["egp", "usd", "eur"],
       statusHover: true,
       statusClick: true,
       lang: "en",
@@ -156,19 +166,17 @@ export default {
   methods: {
     // ANIMATION SEARCH HOME
     animationSearchHome(e) {
-
       // IF STATUS CLICK EQUAL TRUE WILL CONVERT PREVENT DEFAULT IF NO WILL CONVERT FALSE NO PREVENT DEFAULT
-      if(this.statusClick && window.width) e.preventDefault();
+      if (this.statusClick && window.innerWidth > 900) e.preventDefault();
+
+      // ALL VARIABLES
+      const searchIcon = document.getElementById("home-button-search");
+      const searchInput = document.getElementById("home-search");
+      const navbarItems = document.getElementById("navbar-primary").children;
+      let tl = new TimelineMax();
 
       // HOVER MANGER
-      if (this.statusHover && window.width > 900) {
-        // ALL VARIABLES
-        const searchIcon = document.getElementById("home-button-search");
-        const searchInput = document.getElementById("home-search");
-        const navbarItems = document.getElementById("navbar-primary").children;
-
-        let tl = new TimelineMax();
-
+      if (this.statusHover && window.innerWidth > 900) {
         // TIME LINE ANIMATION
         tl.staggerTo(
           navbarItems,
@@ -179,13 +187,19 @@ export default {
           searchInput,
           0.5,
           { width: "0%", autoAlpha: 0 },
-          { width: "50%", autoAlpha: 1, border: '.5px solid #bae9ff', padding: '0 1.5rem', ease: Power1.easeInOut }
+          {
+            width: "50%",
+            autoAlpha: 1,
+            border: ".5px solid #bae9ff",
+            padding: "0 1.5rem",
+            ease: Power1.easeInOut
+          }
         );
 
         // FUNCTION OPTION ALL ADD EVENT LISTENER
         const option = () => {
           tl.reverse();
-          if(!searchInput.value == "") this.statusClick = false;
+          if (!searchInput.value == "") this.statusClick = false;
           searchInput.value = "";
           this.statusHover = true;
         };
@@ -205,6 +219,19 @@ export default {
 
         // IF USER BLUR INPUT
         searchInput.addEventListener("blur", option);
+      }
+    },
+
+    // VALIDATION INPUT RESPONSIVE
+    validationInputResponsive() {
+      // INPUTSEARCH
+      const inputsearch = this.$refs.inputsearch;
+
+      // VALIDATION IF WINDOW WIDTH <= 900
+      if (window.innerWidth <= 900) {
+        inputsearch.addEventListener("blur", () => {
+          if (!inputsearch.value == "") inputsearch.value = "";
+        });
       }
     },
 
@@ -284,11 +311,11 @@ export default {
         );
       }
     }
-
   },
   components: {
     appShappingCard: ShappingCard,
-    appNoteBar: NoteBar
+    appNoteBar: NoteBar,
+    appButtonToggle: ButtonToggle
   }
 };
 </script>
