@@ -7,6 +7,7 @@ import Product from './view/Product.vue';
 import Blog from './view/Blog.vue';
 import Portfolio from './view/Portfolio.vue';
 import Page from './view/Page.vue';
+import Error404 from './view/Error404.vue';
 
 // PERFORMANCE
 
@@ -47,6 +48,15 @@ export const router = new VueRouter({
             path: '/page',
             component: Page,
             name: 'page'
+        },
+        {
+            path: '/error',
+            component: Error404,
+            name: 'error'
+        },
+        {
+            path: '*',
+            redirect: 'error'
         }
     ]
 });
