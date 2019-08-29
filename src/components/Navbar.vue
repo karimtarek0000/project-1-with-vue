@@ -1,25 +1,8 @@
 <template>
   <nav class="navbar">
+    
     <!-- START NAVBAR NOTE -->
-    <div class="navbar_note">
-      <!-- START CONTAINER -->
-      <div class="container">
-        <!-- START NAVBAR NOTE CONTENT -->
-        <div class="navbar_note_content">
-          <!-- NAVBAR NOTE PARAGRAPH -->
-          <p
-            class="navbar_note_paragraph text-capitalize"
-          >free international shipping with $75 purchase</p>
-
-          <!-- ICON CLOSE -->
-          <div class="navbar_note_close">
-            <span class="navbar_note_close_icon">&times;</span>
-          </div>
-        </div>
-        <!-- END NAVBAR NOTE CONTENT -->
-      </div>
-      <!-- END NAVBAR NOTE BOX -->
-    </div>
+    <app-note-bar></app-note-bar>
     <!-- END NAVBAR NOTE -->
 
     <!-- START NAVBAR NAV -->
@@ -133,8 +116,16 @@
               </button>
             </form>
 
-            <!-- NAVBAR PRIMARY NAV SHAPPING -->
+            <!-- START NAVBAR PRIMARY NAV SHAPPING -->
             <app-shapping-card></app-shapping-card>
+            <!-- END NAVBAR PRIMARY NAV SHAPPING -->
+
+            <div class="navbar_primary_nav_toggle">
+              <span class="navbar_primary_nav_toggle_icon navbar_primary_nav_toggle_icon--1"></span>
+              <span class="navbar_primary_nav_toggle_icon navbar_primary_nav_toggle_icon--2"></span>
+              <span class="navbar_primary_nav_toggle_icon navbar_primary_nav_toggle_icon--3"></span>
+            </div>
+
           </div>
           <!-- END NAVBAR PRIMARY NAV -->
         </div>
@@ -147,6 +138,7 @@
 </template>
 
 <script>
+import NoteBar from './NoteBar';
 import ShappingCard from "./ShappingCard";
 
 export default {
@@ -166,9 +158,10 @@ export default {
     animationSearchHome(e) {
 
       // IF STATUS CLICK EQUAL TRUE WILL CONVERT PREVENT DEFAULT IF NO WILL CONVERT FALSE NO PREVENT DEFAULT
-      if(this.statusClick) e.preventDefault();
+      if(this.statusClick && window.width) e.preventDefault();
 
-      if (this.statusHover) {
+      // HOVER MANGER
+      if (this.statusHover && window.width > 900) {
         // ALL VARIABLES
         const searchIcon = document.getElementById("home-button-search");
         const searchInput = document.getElementById("home-search");
@@ -186,7 +179,7 @@ export default {
           searchInput,
           0.5,
           { width: "0%", autoAlpha: 0 },
-          { width: "50%", autoAlpha: 1, ease: Power1.easeInOut }
+          { width: "50%", autoAlpha: 1, border: '.5px solid #bae9ff', padding: '0 1.5rem', ease: Power1.easeInOut }
         );
 
         // FUNCTION OPTION ALL ADD EVENT LISTENER
@@ -291,9 +284,11 @@ export default {
         );
       }
     }
+
   },
   components: {
-    appShappingCard: ShappingCard
+    appShappingCard: ShappingCard,
+    appNoteBar: NoteBar
   }
 };
 </script>
