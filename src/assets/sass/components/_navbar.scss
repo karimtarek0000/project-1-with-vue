@@ -172,49 +172,15 @@
 
       // NAVBAR PRIMARY NAV LOGO
       &_logo {
+        // RESPONSIVE
+        @include respond(tablet-p) {
+          margin-right: 1rem;
+        }
         // NAVBAR PRIMARY NAV LOGO SVG
         & svg {
           width: 10rem;
           height: 2rem;
         }
-      }
-      
-      // NAVBAR PRIMARY NAV TOGGLE
-      &_toggle {
-        margin-left: 1.5em;
-        display: none;
-        // background-color: blue;
-
-        // RESPONSIVE
-        @include respond(tablet-p) {
-          display: block;
-        }
-
-        // NAVBAR PRIMARY NAV TOGGLE ICON
-        &_icon {
-          display: block;
-          width: 30px;
-          height: 3px;
-          background-color: black;
-
-          &:nth-of-type(2) {
-            margin: 4px 0;
-          }
-
-          // NAVBAR PRIMARY NAV TOGGLE ICON --1
-          &--1 {
-          }
-
-          // NAVBAR PRIMARY NAV TOGGLE ICON --2
-          &--2 {
-          }
-
-          // NAVBAR PRIMARY NAV TOGGLE ICON --3
-          &--3 {
-          }
-
-        }
-
       }
 
       // NAVBAR PRIMARY NAV ITEMS
@@ -225,13 +191,14 @@
         display: flex;
         align-items: stretch;
 
+        // RESPONSIVE
         @include respond(tablet-p) {
           position: absolute;
           flex-direction: column;
-          @include translate('top', 'right', 100%, 0);
+          @include translate("top", "right", 100%, -100%);
+          opacity: 0;
           width: 100%;
-          background-color: $tree-color;
-
+          background-color: $four-color;
         }
 
         // NAVBAR PRIMARY NAV ITEMS DIRECT CHILD LI
@@ -244,12 +211,13 @@
           line-height: 6.025rem;
           cursor: pointer;
 
+          // RESPONSIVE
           @include respond(tablet-p) {
             display: block;
           }
-
         }
 
+        // CLASS ACTIVE
         &--itemactive {
           background-color: $two-color;
           color: $font-color-three !important;
@@ -262,6 +230,7 @@
 
         // RESPONSIVE
         @include respond(tablet-p) {
+          position: relative;
           display: flex;
           align-items: center;
           margin-left: auto;
@@ -275,10 +244,14 @@
           width: 0%;
           height: 100%;
           font-size: 2em;
-          transition: all .5s ease-in-out;
 
           &:focus {
             border: 1px solid darken($first-color, 50%);
+          }
+
+          // RESPONSIVE
+          @include respond(tablet-p) {
+            transition: all 0.5s ease-in-out;
           }
 
           // RESPONSIVE
@@ -288,20 +261,19 @@
             width: 100%;
             @include translate("top", "right", 0, 0);
             transform: translateY(0);
-            margin: 0 -1.5em 0 1em;
-            padding: .3em 1em;
+            padding: 0.3em 0 0.3em 1.5em;
             border: 1px solid $first-color;
           }
-
         }
 
         // NAVBAR PRIMARY NAV BUTTON
         & > button {
           vertical-align: middle;
 
+          // RESPONSIVE
           @include respond(tablet-p) {
-            position: relative;
-            margin-right: 2em;
+            position: absolute;
+            @include translate("top", "left", 50%, 5px);
           }
 
           // NAVBAR PRIMARY NAV SVG
