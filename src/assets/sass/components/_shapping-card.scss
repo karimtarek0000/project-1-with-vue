@@ -1,0 +1,99 @@
+.navbar {
+  &_primary {
+    &_nav {
+      ////////////////////////////////////////
+      // NAVBAR PRIMARY NAV SHAPPING
+      &_shapping {
+        // NAVBAR PRIMARY NAV SVG
+        & > svg {
+          width: 2rem;
+          height: 2rem;
+        }
+
+        // NAVBAR PRIMARY NAV SHAPPING ICON
+        &_icon {
+
+          // RESPONSIVE
+          @include respond(tablet-p) {
+            margin-left: 1rem;
+          }
+
+          cursor: pointer;
+          user-select: none;
+        }
+
+        // NAVBAR PRIMARY NAV SHAPPING BOX
+        &_boxs {
+          position: absolute;
+          width: 30%;
+          @include translate("top", "right", 100%, 0);
+          background-color: $four-color;
+          padding: 0.3em;
+        }
+
+        &_box {
+          position: relative;
+          margin-top: 0.5em;
+          display: flex;
+        }
+
+        &_close {
+          position: absolute;
+          @include translate("top", "right", 0, 0);
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          background-color: $four-color;
+          color: $font-color-two;
+          text-align: center;
+          line-height: 2rem;
+          font-size: 1.5em;
+          cursor: pointer;
+        }
+
+        // NAVBAR PRIMARY NAV SHAPPING IMAGE
+        &_image {
+          height: 100%;
+
+          & > img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+          }
+        }
+
+        // NAVBAR PRIMARY NAV SHAPPING CONTENT
+        &_content {
+          width: 100%;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-transform: capitalize;
+        }
+
+        // NAVBAR PRIMARY NAV SHAPPING NAME PRODUCT
+        &_name_product {
+        }
+
+        // NAVBAR PRIMARY NAV SHAPPING PRODUCT PRICE
+        &_product_price {
+          padding: 0.8em 0;
+        }
+
+        &_rating {
+          &_icons {
+            display: inline-block;
+
+            & > svg {
+              width: 15px;
+              height: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
