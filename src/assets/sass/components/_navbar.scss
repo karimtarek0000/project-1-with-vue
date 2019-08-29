@@ -79,6 +79,11 @@
       display: flex;
       align-items: center;
 
+      @include respond(tablet-p) {
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
       // NAVBAR PRIMARY INFO CONTENT
       &_content {
         // NAVBAR PRIMARY INFO CONTENT DIRECT CHILD
@@ -105,6 +110,10 @@
       // NAVBAR PRIMARY INFO OPTIONS
       &_options {
         margin-left: auto;
+
+        @include respond(tablet-p) {
+          margin-left: 0;
+        }
 
         // NAVBAR PRIMARY INFO OPTIONS ALL DIRECT CHILD
         & > * {
