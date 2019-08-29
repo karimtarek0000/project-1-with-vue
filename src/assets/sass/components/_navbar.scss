@@ -34,6 +34,7 @@
       border-radius: 50%;
       background-color: $first-color;
       text-align: center;
+      cursor: pointer;
 
       // NAVBAR NOTE ICON
       &_icon {
@@ -47,6 +48,11 @@
   &_primary {
     font-size: 2rem;
     background-color: $tree-color;
+
+    // RESPONSIVE
+    @include respond(phone) {
+      font-size: 2.5rem;
+    }
 
     // NAVBAR PRIMARY BOX
     &_box {
@@ -172,6 +178,44 @@
           height: 2rem;
         }
       }
+      
+      // NAVBAR PRIMARY NAV TOGGLE
+      &_toggle {
+        margin-left: 1.5em;
+        display: none;
+        // background-color: blue;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+          display: block;
+        }
+
+        // NAVBAR PRIMARY NAV TOGGLE ICON
+        &_icon {
+          display: block;
+          width: 30px;
+          height: 3px;
+          background-color: black;
+
+          &:nth-of-type(2) {
+            margin: 4px 0;
+          }
+
+          // NAVBAR PRIMARY NAV TOGGLE ICON --1
+          &--1 {
+          }
+
+          // NAVBAR PRIMARY NAV TOGGLE ICON --2
+          &--2 {
+          }
+
+          // NAVBAR PRIMARY NAV TOGGLE ICON --3
+          &--3 {
+          }
+
+        }
+
+      }
 
       // NAVBAR PRIMARY NAV ITEMS
       &_items {
@@ -180,6 +224,15 @@
         align-self: stretch;
         display: flex;
         align-items: stretch;
+
+        @include respond(tablet-p) {
+          position: absolute;
+          flex-direction: column;
+          @include translate('top', 'right', 100%, 0);
+          width: 100%;
+          background-color: $tree-color;
+
+        }
 
         // NAVBAR PRIMARY NAV ITEMS DIRECT CHILD LI
         & > li {
@@ -190,6 +243,11 @@
           padding: 0 0.9em;
           line-height: 6.025rem;
           cursor: pointer;
+
+          @include respond(tablet-p) {
+            display: block;
+          }
+
         }
 
         &--itemactive {
@@ -202,6 +260,14 @@
       &_search {
         width: 30px;
 
+        // RESPONSIVE
+        @include respond(tablet-p) {
+          display: flex;
+          align-items: center;
+          margin-left: auto;
+          width: 100%;
+        }
+
         // NAVBAR PRIMARY NAV SEARCH INPUT[ SEARCH ]
         & > input[type="search"] {
           position: absolute;
@@ -209,11 +275,34 @@
           width: 0%;
           height: 100%;
           font-size: 2em;
+          transition: all .5s ease-in-out;
+
+          &:focus {
+            border: 1px solid darken($first-color, 50%);
+          }
+
+          // RESPONSIVE
+          @include respond(tablet-p) {
+            position: static;
+            display: inline-block;
+            width: 100%;
+            @include translate("top", "right", 0, 0);
+            transform: translateY(0);
+            margin: 0 -1.5em 0 1em;
+            padding: .3em 1em;
+            border: 1px solid $first-color;
+          }
+
         }
 
         // NAVBAR PRIMARY NAV BUTTON
         & > button {
           vertical-align: middle;
+
+          @include respond(tablet-p) {
+            position: relative;
+            margin-right: 2em;
+          }
 
           // NAVBAR PRIMARY NAV SVG
           & > svg {
