@@ -1,0 +1,208 @@
+// FEATURED PRODUCTS
+.featured_products {
+  position: relative;
+  top: -20px;
+  background-color: $four-color;
+  font-size: 2.5rem;
+  padding: 0.8em;
+  z-index: 300;
+
+  // FEATURED PRODUCTS HEADINGS BOX
+  &_headings_box {
+    display: flex;
+    justify-content: space-around;
+    text-transform: capitalize;
+
+    // RESPONSIVE
+    @include respond(tablet-p) {
+      flex-direction: column;
+    }
+  }
+
+  // FEATURED PRODUCTS HEADINGS
+  &_headings {
+    position: relative;
+    z-index: 200;
+
+    // RESPONSIVE
+    @include respond(tablet-p) {
+      margin: 0.5em 0;
+    }
+
+    // FEATURED PRODUCTS HEADINGS ICON
+    &_icon {
+      position: absolute;
+      display: block;
+      background-color: $four-color;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include translate("top", "left", -120%, 50%);
+      z-index: -100;
+
+      // RESPONSIVE
+      @include respond(tablet-p) {
+        position: static;
+        transform: translateX(0%);
+        height: 5rem;
+      }
+
+      // FEATURED PRODUCTS HEADINGS ICON SVG
+      & > svg {
+        fill: $font-color-one;
+        width: 50%;
+        height: 50%;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    // FEATURED PRODUCTS HEADINGS HEADING
+    &_heading {
+      color: $font-color-two;
+      font-weight: $font-weight-h2;
+      font-size: 0.8em;
+      padding: 0.5em 0 0.7em 0;
+
+      // RESPONSIVE
+      @include respond(tablet-p) {
+        font-size: 1.5em;
+      }
+    }
+
+    // FEATURED PRODUCTS HEADINGS PAR
+    &_par {
+      font-size: 0.5em;
+      color: $font-color-one;
+
+      // RESPONSIVE
+      @include respond(tablet-p) {
+        font-size: 1em;
+      }
+    }
+
+    // FEATURED PRODUCTS HEADINGS ONE
+    &--1 {
+    }
+
+    // FEATURED PRODUCTS HEADINGS TWO
+    &--2 {
+    }
+
+    // FEATURED PRODUCTS HEADINGS THREE
+    &--3 {
+    }
+  }
+
+  //////////////////////////////////////
+  // FEATURED PRODUCTS QUICLY SHAPPING
+  &_quicly_shapping {
+    margin: 3em 0;
+
+    // FEATURED PRODUCTS QUICLY SHAPPING BOXS
+    &_boxs {
+      display: flex;
+      flex-flow: wrap row;
+      justify-content: space-between;
+    }
+
+    // FEATURED PRODUCTS QUICLY SHAPPING BOX
+    &_box {
+      position: relative;
+      height: 40rem;
+      flex: 0 1 48%;
+      background-color: $fife-color;
+      border-radius: $border-raduis-pixel;
+      overflow: hidden;
+
+      // RESPONSIVE
+      @include respond(tablet-p) {
+        flex: 1 1 100%;
+      }
+
+      // FEATURED PRODUCTS QUICLY SHAPPING BOX :NOT LAST OF TYPE
+      &:not(:last-of-type) {
+        
+        // RESPONSIVE
+        @include respond(tablet-p) {
+          margin-bottom: 1em;
+        }
+      }
+
+      // FEATURED PRODUCTS QUICLY SHAPPING BOX IMG
+      & > img {
+        position: absolute;
+        @include translate("top", "right", 0, 0);
+        width: 80%;
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      // FEATURED PRODUCTS QUICLY SHAPPING BOX CONTENT
+      &_content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        // color: $font-color-three;
+        padding: 0 0.8em;
+        z-index: 2;
+
+        // FEATURED PRODUCTS QUICLY SHAPPING CONTENT HEADING
+        &_heading {
+          font-size: 2em;
+
+          // RESPONSIVE
+          @include respond(phone) {
+            font-size: 3em;
+          }
+
+          // FEATURED PRODUCTS QUICLY SHAPPING CONTENT HEADING SPAN
+          & > span {
+            display: block;
+
+            // FEATURED PRODUCTS QUICLY SHAPPING CONTENT HEADING SPAN (1)
+            &:nth-of-type(1) {
+              color: $font-color-two;
+            }
+
+            // FEATURED PRODUCTS QUICLY SHAPPING CONTENT HEADING SPAN(2)
+            &:nth-of-type(2) {
+              color: $two-color;
+            }
+          }
+        }
+
+        // FEATURED PRODUCTS QUICLY SHAPPING CONTENT BAR
+        &_par {
+          font-size: 0.7em;
+          line-height: $line-height-paragraph;
+          width: 60%;
+          margin: 0.6em 0;
+          color: $font-color-one;
+
+          // RESPONSIVE
+          @include respond(phone) {
+            font-size: 1.2em;
+          }
+        }
+
+        // FEATURED PRODUCTS QUICLY SHAPPING CONTENT BTN
+        &_btn {
+        }
+      }
+    }
+  }
+}
