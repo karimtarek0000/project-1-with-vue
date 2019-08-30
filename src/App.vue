@@ -5,18 +5,17 @@
 
     <!-- VIEW ROUTER -->
     <router-view></router-view>
-
   </div>
 </template>
 
 <script>
 // ALL IMPORT
-import Navbar from './components/Navbar';
+import Navbar from "./components/Navbar";
 
 export default {
   methods: {
     hideNavbar() {
-      return this.$route.path === '/error';
+      return this.$route.path === "/error";
     }
   },
   components: {
