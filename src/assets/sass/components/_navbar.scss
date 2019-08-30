@@ -111,6 +111,7 @@
       &_options {
         margin-left: auto;
 
+        // RESPONSIVE
         @include respond(tablet-p) {
           margin-left: 0;
         }
@@ -124,6 +125,7 @@
         &--box {
           position: relative;
 
+          // NAVBAR PRIMARY INFO OPTIONS BOX FIRST CHILD
           &:first-child {
             .navbar_primary_info_options_icon {
               margin-right: 1em;
