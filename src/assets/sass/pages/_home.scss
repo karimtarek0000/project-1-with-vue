@@ -6,6 +6,7 @@
   font-size: 2.5rem;
   padding: 0.8em;
   z-index: 300;
+  overflow: hidden;
 
   // FEATURED PRODUCTS HEADINGS BOX
   &_headings_box {
@@ -172,6 +173,7 @@
           // FEATURED PRODUCTS QUICLY SHAPPING CONTENT HEADING SPAN
           & > span {
             display: block;
+            letter-spacing: $letter-spacing-head;
 
             // FEATURED PRODUCTS QUICLY SHAPPING CONTENT HEADING SPAN (1)
             &:nth-of-type(1) {
@@ -201,7 +203,92 @@
 
         // FEATURED PRODUCTS QUICLY SHAPPING CONTENT BTN
         &_btn {
+          font-size: .6em;
+
+          @include respond(phone) {
+            font-size: .9em;
+          }
         }
+      }
+    }
+  }
+
+   //////////////////////////////////////
+  // FEATURED PRODUCTS SLIDER
+  &_slider {
+
+    // FEATURED PRODUCTS SLIDER HEADING
+    &_heading {
+
+
+      // FEATURED PRODUCTS SLIDER HEADING HEAD
+      &_head {
+        font-size: .9em;
+        color: $font-color-two;
+      }
+
+      // FEATURED PRODUCTS SLIDER HEADING PAR
+      &_par {
+        font-size: .6em;
+        margin: .7em 0;
+        color: $font-color-one;
+      }
+    }
+
+    // FEATURED PRODUCTS SLIDER INNER
+    &_inner {
+      display: inline-flex;
+      white-space: nowrap;
+      width: 100%;
+      margin-top: 1em;
+      // overflow-x: scroll;
+    }
+
+    // FEATURED PRODUCTS SLIDER SLIDE
+    &_slide {
+      // display: inline-flex;
+
+      &:not(:last-child) {
+        margin-right: .8em;
+      }
+
+      // FEATURED PRODUCTS SLIDER SLIDE IMAGE
+      &_image {
+
+      }
+
+      // FEATURED PRODUCTS SLIDER SLIDE CAPTION
+      &_caption {
+
+      }
+
+      // FEATURED PRODUCTS SLIDER SLIDE HEAD
+      &_head {
+
+      }
+
+      // FEATURED PRODUCTS SLIDER SLIDE RATING
+      &_rating {
+
+        & > li {
+          display: inline-block;
+
+          & > svg {
+            height: 1.5rem;
+            width: 1.5rem;
+            fill: orange;
+          }
+        }
+      }
+
+      // FEATURED PRODUCTS SLIDER SLIDE PRICE
+      &_price {
+
+      }
+
+      // FEATURED PRODUCTS SLIDER SLIDE DISCOUNT
+      &_discount {
+
       }
     }
   }

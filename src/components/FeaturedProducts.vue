@@ -34,6 +34,10 @@
     <!-- START QUICKLY SHAPPING -->
     <app-quicly-shapping></app-quicly-shapping>
     <!-- END QUICKLY SHAPPING -->
+
+    <!-- START FEATURED SLIDER -->
+    <app-featured-slider></app-featured-slider>
+    <!-- END FEATURED SLIDER -->
     
   </section>
 </template>
@@ -41,9 +45,11 @@
 <script>
 // ALL IMPORT
 import QuiclyShapping from './QuiclyShapping';
+import FeaturedSlider from './FeaturedSlider';
 export default {
   components: {
-    appQuiclyShapping: QuiclyShapping
+    appQuiclyShapping: QuiclyShapping,
+    appFeaturedSlider: FeaturedSlider
   }
 };
 </script>

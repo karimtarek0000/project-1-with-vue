@@ -74,7 +74,7 @@
 
     &_1,
     &_2 {
-      letter-spacing: -0.1em;
+      letter-spacing: $letter-spacing-head;
     }
 
     &_1 {
@@ -96,7 +96,7 @@
 
   // HEADER PARAGRAPH
   &_paragraph {
-    font-size: 0.7em;
+    font-size: 0.8em;
     margin: 0.5em 0 0.9em 0;
     color: $font-color-one;
     font-weight: 400;
@@ -107,5 +107,6 @@
   &_button:link,
   &_button:visited {
     margin: 0 auto;
+    font-size: .8em;
   }
 }

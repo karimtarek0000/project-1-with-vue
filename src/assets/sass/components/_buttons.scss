@@ -1,11 +1,10 @@
 // BTN PRIMARY
 .btn-primary:link, .btn-primary:visited {
     color: $font-color-three;
-    font-size: .6em;
     font-weight: 700;
     background-color: $color-btn-one;
     padding: 1em;
-    width: 30%;
+    width: 40%;
     text-align: center;
     transition: all .5s ease-in-out;
 
@@ -18,5 +17,6 @@
     &:active {
         transform: translateY(1rem);
     }
+       
 }
 
