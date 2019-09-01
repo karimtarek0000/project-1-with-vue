@@ -6,7 +6,6 @@
   font-size: 2.5rem;
   padding: 0.8em;
   z-index: 300;
-  overflow: hidden;
 
   // FEATURED PRODUCTS HEADINGS BOX
   &_headings_box {
@@ -131,7 +130,6 @@
 
       // FEATURED PRODUCTS QUICLY SHAPPING BOX :NOT LAST OF TYPE
       &:not(:last-of-type) {
-        
         // RESPONSIVE
         @include respond(tablet-p) {
           margin-bottom: 1em;
@@ -203,75 +201,102 @@
 
         // FEATURED PRODUCTS QUICLY SHAPPING CONTENT BTN
         &_btn {
-          font-size: .6em;
+          font-size: 0.6em;
 
           @include respond(phone) {
-            font-size: .9em;
+            font-size: 0.9em;
           }
         }
       }
     }
   }
 
-   //////////////////////////////////////
+  //////////////////////////////////////
   // FEATURED PRODUCTS SLIDER
   &_slider {
+    overflow: hidden;
 
     // FEATURED PRODUCTS SLIDER HEADING
     &_heading {
-
-
       // FEATURED PRODUCTS SLIDER HEADING HEAD
       &_head {
-        font-size: .9em;
+        font-size: 1em;
         color: $font-color-two;
       }
 
       // FEATURED PRODUCTS SLIDER HEADING PAR
       &_par {
-        font-size: .6em;
-        margin: .7em 0;
+        font-size: 0.7em;
+        margin-top: 0.7em;
         color: $font-color-one;
       }
     }
 
     // FEATURED PRODUCTS SLIDER INNER
     &_inner {
-      display: inline-flex;
-      white-space: nowrap;
       width: 100%;
-      margin-top: 1em;
-      // overflow-x: scroll;
+      margin-top: 2.5em;
+      white-space: nowrap;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      user-select: none;
+
+      // FEATURED PRODUCTS SLIDER INNER --ACTIVE
+      &--active {
+        cursor: grabbing;
+      }
     }
 
     // FEATURED PRODUCTS SLIDER SLIDE
     &_slide {
-      // display: inline-flex;
+      display: inline-block;
+      width: calc(25% - 0.8em);
+      background-color: $four-color;
+      overflow: hidden;
 
+
+      // FEATURED PRODUCTS SLIDER SLIDE :NOT => LAST CHILD
       &:not(:last-child) {
-        margin-right: .8em;
+        margin-right: 0.8em;
+      }
+
+      // RESPONSIVE
+      @include respond(tablet-p) {
+        width: calc(50% - 0.8em);
       }
 
       // FEATURED PRODUCTS SLIDER SLIDE IMAGE
       &_image {
+        overflow: hidden;
+        width: 100%;
 
+        // FEATURED PRODUCTS SLIDER SLIDE IMAGE IMG
+        & > img {
+          width: 100%;
+          height: 100%;
+          max-width: 100%;
+          object-fit: cover;
+          -webkit-user-drag: none;
+          user-drag: none;
+        }
       }
 
       // FEATURED PRODUCTS SLIDER SLIDE CAPTION
       &_caption {
-
       }
 
       // FEATURED PRODUCTS SLIDER SLIDE HEAD
       &_head {
-
+        color: $font-color-two;
+        font-size: 0.8em;
       }
 
       // FEATURED PRODUCTS SLIDER SLIDE RATING
       &_rating {
-
+        margin: 0.2em 0;
         & > li {
           display: inline-block;
+          cursor: pointer;
 
           & > svg {
             height: 1.5rem;
@@ -283,12 +308,44 @@
 
       // FEATURED PRODUCTS SLIDER SLIDE PRICE
       &_price {
-
+        color: $font-color-two;
+        font-weight: 700;
       }
 
       // FEATURED PRODUCTS SLIDER SLIDE DISCOUNT
       &_discount {
+        color: lighten($font-color-one, 15%);
+        text-decoration: line-through;
+      }
 
+      &_price,
+      &_discount {
+        width: 50%;
+        font-size: 0.8em;
+      }
+
+      // FEATURED PRODUCTS SLIDER SLIDE BTN
+      &_btn {
+        font-size: 0.5em;
+        margin-top: 0.8em;
+      }
+    }
+
+    &_control {
+      margin-top: 1em;
+
+      &_icon {
+        width: 30px;
+        height: 30px;
+        user-select: none;
+        cursor: pointer;
+
+        &--right {
+        }
+
+        &--left {
+          margin-right: 0.5em;
+        }
       }
     }
   }
