@@ -18,7 +18,7 @@ const mode = "production";
 const output = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/js/[name][contenthash:5].js',
-    publicPath: '/'
+    publicPath: '../'
 };
 
 // OPTIMIZATION
