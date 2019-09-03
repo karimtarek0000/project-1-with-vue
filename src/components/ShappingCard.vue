@@ -2,7 +2,7 @@
   <!-- NAVBAR PRIMARY NAV SHAPPING -->
   <div class="navbar_primary_nav_shapping">
     <!-- NAVBAR PRIMARY NAV SHAPPING ICON -->
-    <svg @click="show = !show" class="navbar_primary_nav_shapping_icon">
+    <svg @click="closeShappingCard" class="navbar_primary_nav_shapping_icon">
       <title>shapping</title>
       <use xlink:href="../assets/img/sprit.svg#icon-shopping-cart" />
     </svg>
@@ -92,43 +92,56 @@
 </template>
 
 <script>
-
 // ALL IMPORT
-import { mapGetters } from 'vuex';
+import { mapGetters } from "vuex";
 
 export default {
   data() {
     return {
       show: false
-    };
+    }
   },
-  methods: {},
   computed: {
-    ...mapGetters([
-      'getProduct',
-      'getPrice'
-    ]),
-    
-      
+    ...mapGetters(["getProduct", "getPrice"])
   },
-  mounted() {
-    // SHAPPING CLOSE
-    const shappingClose = () => {
-      const closeIcon = document.querySelectorAll(
-        ".navbar_primary_nav_shapping_close"
-      );
+  methods: {
 
+    // CLOSE SHAPPING CARD
+    closeShappingCard() {
+      const primaryNav = document.getElementById("primaryNav");
+
+      // TOGGLE TRUE AND FALSE
+      this.show = !this.show;
+
+      // IF STATEMENT OVERFLOW HIDDEN AND VISIBLE
+      this.show ? primaryNav.style.overflow = "visible" : primaryNav.style.overflow = "hidden";
+      
+    },
+
+    // SHAPPING CLOSE
+    shappingClose() {
+
+      const primaryNav = document.getElementById("primaryNav"),
+      closeIcon = document.querySelectorAll(".navbar_primary_nav_shapping_close");
+
+      // FOR EACH CLICK CLOSE AND REMOVE ELEMENT
       closeIcon.forEach(cur =>
         cur.addEventListener("click", () => {
           if (cur.parentElement.parentElement.childElementCount == 1) {
             cur.parentElement.parentElement.remove();
+            primaryNav.style.overflow = "hidden";
           } else {
             cur.parentElement.remove();
           }
         })
       );
-    };
-    shappingClose();
+    }
+
+  },
+  mounted() {
+
+    // RUNNING SHAPPING CLOSE
+    this.shappingClose();
   }
 };
 </script>
