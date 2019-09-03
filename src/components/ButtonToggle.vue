@@ -51,19 +51,22 @@ export default {
         childsBtnToggleTwo = this.$refs.toggleNavbar.children[1],
         childsBtnToggleThree = this.$refs.toggleNavbar.children[2],
         navbarItems = document.getElementById("navbar-primary"),
+        primaryNav = document.getElementById("primaryNav"),
         duration = ".5";
 
         // TIME LINE TRACK
         this.tl
-            .to(childsBtnToggleOne, duration, {position: "relative",transform: "translateY(9px) rotate(45deg)",ease: Power2.ease})
-            .to(childsBtnToggleTwo,0.1,{ autoAlpha: 0, ease: Power2.ease },"=-.5")
-            .to(childsBtnToggleThree,duration,{position: "relative",transform: "translateY(-6px) rotate(-45deg)",ease: Power2.ease},"=-.5")
-            .to(navbarItems, duration, {autoAlpha: 1,right: "0",ease: Power1.easeInOut});
+            .to(childsBtnToggleOne, duration, {position: "relative",transform: "translateY(9px) rotate(45deg)",ease: Power1.ease})
+            .to(childsBtnToggleTwo,0.1,{ autoAlpha: 0, ease: Power1.ease },"=-.5")
+            .to(childsBtnToggleThree,duration,{position: "relative",transform: "translateY(-6px) rotate(-45deg)",ease: Power1.ease},"=-.5")
+            .to(primaryNav, 0, {overflow: 'visible'})
+            .to(navbarItems, duration, {autoAlpha: 1,right: "0"});
         
         // TL REVERSED
         this.tl.reversed(status);
-    }
-  },
+    },
+
+  }
 };
 </script>
 
