@@ -11,10 +11,10 @@
     <div
       id="sliderInner"
       class="featured_products_slider_inner"
-      @mousedown="mouseDown"
+      @mousedown="mouseDown($event, $event.pageX)"
       @mouseup="mouseUp"
       @mouseleave="mouseLeave"
-      @mousemove="mouseMove"
+      @mousemove="mouseMove($event, $event.pageX)"
     >
       <div class="featured_products_slider_slide">
         <div class="featured_products_slider_slide_image">
@@ -587,10 +587,10 @@ export default {
 
     // ARROW OPACITY CLICK
     arrowOpacityClick() {
-
       // ALL VARIABLES
-      const arrowRight = document.getElementById("arrowRight");
-      const arrowLeft = document.getElementById("arrowLeft");
+      const slider = document.getElementById("sliderInner"),
+        arrowRight = document.getElementById("arrowRight"),
+        arrowLeft = document.getElementById("arrowLeft");
 
       // IF STATEMENT
       if (this.countSlide == 0) {
@@ -607,10 +607,10 @@ export default {
 
     // ARROW OPACITY TOUCH
     arrowOpacityTouch() {
-
       // ALL VARIABLES
-      const arrowRight = document.getElementById("arrowRight");
-      const arrowLeft = document.getElementById("arrowLeft");
+      const slider = document.getElementById("sliderInner"),
+        arrowRight = document.getElementById("arrowRight"),
+        arrowLeft = document.getElementById("arrowLeft");
 
       // IF STATEMENT
       if (this.slider == this.minSclientWidthScrollWidth) {
@@ -621,11 +621,13 @@ export default {
         arrowRight.style.opacity = 1;
         arrowLeft.style.opacity = 1;
       }
+
+      slider.style.scrollBehavior = "none";
     }
   },
   methods: {
     // MOUSE DOWN
-    mouseDown(e) {
+    mouseDown(e, option) {
       // STATUS = TRUE WILL BE RUNNING
       this.status = true;
 
@@ -636,7 +638,7 @@ export default {
       slider.classList.add(this.classActive);
 
       // PAGE X WITH MOUSE DOWN
-      this.startDownX = e.pageX - slider.offsetLeft;
+      this.startDownX = option - slider.offsetLeft;
 
       // SCROLL LEFT SLIDER WILL BE MOUSE DOWN
       this.scrollLeftDown = slider.scrollLeft;
@@ -667,8 +669,7 @@ export default {
     },
 
     // MOUSE MOVE
-    mouseMove(e) {
-
+    mouseMove(e, option) {
       // NOT RUNNING FUNCTION
       if (!this.status) return;
 
@@ -676,7 +677,7 @@ export default {
       const slider = document.getElementById("sliderInner");
 
       // MOVE X
-      this.startMoveX = e.pageX - slider.offsetLeft;
+      this.startMoveX = option - slider.offsetLeft;
 
       // MOVE X MINUS DOWN X
       window.innerWidth > 900
@@ -694,6 +695,57 @@ export default {
 
       // RUNNING COMPUTED
       this.arrowOpacityTouch;
+    },
+
+    // TOUCH DEVICE
+    touchDevice() {
+      const slider = document.getElementById("sliderInner");
+
+      slider.addEventListener("touchstart", e => {
+        // STATUS = TRUE WILL BE RUNNING
+        this.status = true;
+
+        // SLIDER
+        const slider = document.getElementById("sliderInner");
+
+        // ADD CLASS ACTIVE
+        slider.classList.add(this.classActive);
+
+        // PAGE X WITH MOUSE DOWN
+        this.startDownX = e.touches[0].pageX - slider.offsetLeft;
+
+        // SCROLL LEFT SLIDER WILL BE MOUSE DOWN
+        this.scrollLeftDown = slider.scrollLeft;
+      });
+
+      slider.addEventListener("touchmove", e => {
+        // NOT RUNNING FUNCTION
+        if (!this.status) return;
+
+        // SLIDER
+        const slider = document.getElementById("sliderInner");
+
+        // MOVE X
+        this.startMoveX = e.touches[0].pageX - slider.offsetLeft;
+
+        // MOVE X MINUS DOWN X
+        window.innerWidth > 900
+          ? (this.minDM = (this.startMoveX - this.startDownX) * 4)
+          : (this.minDM = (this.startMoveX - this.startDownX) * 2);
+
+        // SLIDER SCROLL LEFT EQUAL SCROLL LEFT DOWN MINUS MINUS DOWN AND MOVE
+        slider.scrollLeft = this.scrollLeftDown - this.minDM;
+
+        // MINUS SCROLL WIDTH AND CLIENT WIDTH
+        this.minSclientWidthScrollWidth =
+          slider.scrollWidth - slider.clientWidth;
+
+        // POST SLIDER SCROLL LEFT DATA
+        this.slider = slider.scrollLeft;
+
+        // RUNNING COMPUTED
+        this.arrowOpacityTouch;
+      });
     },
 
     // CLICK MANGER
@@ -739,6 +791,9 @@ export default {
 
     // RUNNING COMPUTED ARROW OPACITY
     this.arrowOpacityClick;
+
+    // RUNNING TOUCH DEVICE
+    this.touchDevice();
   }
 };
 </script>
