@@ -3,7 +3,8 @@
     margin: 0 auto;
     height: 100%;
     padding: 0 1rem;
-
+    background-color: none;
+    
     // RESPONSIVE
     @include respond(tablet-p) {
         padding: 0 .3rem;
