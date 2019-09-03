@@ -11,6 +11,7 @@
         <h2 class="featured_products_headings_heading">free shapping</h2>
         <p class="featured_products_headings_par">with €50 or more orders</p>
       </div>
+
       <div class="featured_products_headings featured_products_headings--2">
         <div class="featured_products_headings_icon">
           <svg>
@@ -20,6 +21,7 @@
         <h2 class="featured_products_headings_heading">free refund</h2>
         <p class="featured_products_headings_par">100% refund within 3 days</p>
       </div>
+
       <div class="featured_products_headings featured_products_headings--3">
         <div class="featured_products_headings_icon">
           <svg>
