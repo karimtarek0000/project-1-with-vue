@@ -9,11 +9,11 @@
   &_note {
     font-size: 2rem;
     background-color: $two-color;
-    height: 7rem;
 
     // NAVBAR NOTE CONTENT
     &_content {
       height: 100%;
+      height: 7rem;
       display: flex;
       align-items: center;
     }
@@ -38,6 +38,7 @@
 
       // NAVBAR NOTE ICON
       &_icon {
+        font-size: 3rem;
         display: block;
         color: black;
       }
@@ -180,12 +181,17 @@
       height: 6.05rem;
       display: flex;
       align-items: center;
+      overflow: hidden;
+
+      @include respond(tablet-p) {
+        height: 8.05rem;
+      }
 
       // NAVBAR PRIMARY NAV LOGO
       &_logo {
         // RESPONSIVE
         @include respond(tablet-p) {
-          margin-right: 1rem;
+          margin-right: .5rem;
         }
         // NAVBAR PRIMARY NAV LOGO SVG
         & svg {
@@ -262,18 +268,14 @@
 
           // RESPONSIVE
           @include respond(tablet-p) {
-            transition: all 0.5s ease-in-out;
-          }
-
-          // RESPONSIVE
-          @include respond(tablet-p) {
             position: static;
             display: inline-block;
             width: 100%;
             @include translate("top", "right", 0, 0);
             transform: translateY(0);
-            padding: 0.3em 0 0.3em 1.5em;
+            padding: 0.7em 0 0.7em 2em;
             border: 1px solid $first-color;
+            transition: all 0.5s ease-in-out;
           }
         }
 
@@ -289,8 +291,15 @@
 
           // NAVBAR PRIMARY NAV SVG
           & > svg {
-            width: 2.3rem;
-            height: 2.3rem;
+            width: 5rem;
+            height: 5rem;
+            
+
+            // @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1900px) {
+            //   width: 3.2rem;
+            //   height: 3.2rem;
+            // }
+            
           }
         }
       }
