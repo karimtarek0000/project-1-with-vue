@@ -10,8 +10,9 @@
 
         // RESPONSIVE
         @include respond(tablet-p) {
-            display: block;
-            cursor: pointer;
+          display: block;
+          user-select: none;
+          cursor: pointer;
         }
 
         // NAVBAR PRIMARY NAV TOGGLE ICON
