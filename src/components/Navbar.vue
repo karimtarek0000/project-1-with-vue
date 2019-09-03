@@ -80,7 +80,7 @@
           <!-- END NAVBAR PRIMARY INFO -->
 
           <!-- START NAVBAR PRIMARY NAV -->
-          <div class="navbar_primary_nav">
+          <div class="navbar_primary_nav" id="primaryNav">
             <!-- NAVBAR PRIMARY NAV LOGO -->
             <router-link class="navbar_primary_nav_logo" tag="a" to="/">
               <svg class>
