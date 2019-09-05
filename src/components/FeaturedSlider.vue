@@ -535,6 +535,47 @@
           <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
         </div>
       </div>
+
+      <div class="featured_products_slider_slide">
+        <div class="featured_products_slider_slide_image">
+          <img src="../assets/img/slider/4.png" alt="image-four" />
+        </div>
+
+        <div class="featured_products_slider_slide_caption">
+          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
+          <ul class="featured_products_slider_slide_rating list-unstyled">
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+          </ul>
+          <span class="featured_products_slider_slide_price">$500</span>
+          <span class="featured_products_slider_slide_discount">$600</span>
+          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
+        </div>
+      </div>
+      
     </div>
     <!-- END FEATURED PRODUCTS SLIDER INNER -->
 
@@ -582,7 +623,19 @@ export default {
   computed: {
     // WHAT WIDTH SCREEN
     whatWidthScreen() {
-      window.innerWidth > 900 ? (this.showScreen = 4) : (this.showScreen = 2);
+      if(window.innerWidth <= 600) {
+
+        this.showScreen = 1 
+
+      } else if (window.innerWidth > 600 && window.innerWidth <= 900) {
+
+        this.showScreen = 2
+
+      } else {
+
+        this.showScreen = 4
+
+      }
     },
 
     // ARROW OPACITY CLICK
@@ -695,6 +748,9 @@ export default {
 
       // RUNNING COMPUTED
       this.arrowOpacityTouch;
+
+      // SCROLL BEHAVIOR CONVERT AUTO
+      slider.style.scrollBehavior = 'auto';
     },
 
     // TOUCH DEVICE
@@ -745,7 +801,11 @@ export default {
 
         // RUNNING COMPUTED
         this.arrowOpacityTouch;
+
+        // SLIDER SCROLL BEHAVIOR CONVERT AUTO
+        slider.style.scrollBehavior = 'auto';
       });
+
     },
 
     // CLICK MANGER
@@ -758,7 +818,7 @@ export default {
         getStyle = window.getComputedStyle(slide),
         getWidth = parseInt(getStyle.width),
         getMargin = parseInt(getStyle.marginRight),
-        sumWidthMargin = (getWidth + getMargin + 3) * this.showScreen;
+        sumWidthMargin = (getWidth + getMargin + 3.75) * this.showScreen;
 
       // POST IN VUE DATA
       this.child = child;
@@ -777,6 +837,10 @@ export default {
 
       // RUNNING COMPUTED ARROW OPACITY
       this.arrowOpacityClick;
+
+      // SCROLL BEHAVIOR CONVERT SMOOTH
+      slider.style.scrollBehavior = 'smooth';
+
     }
   },
   watch: {
