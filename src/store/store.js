@@ -8,15 +8,14 @@ Vue.use(Vuex);
 // INIT STORE
 export const store = new Vuex.Store({
     state: {
+        navbarItems: ["/", "shop", "product", "blog", "portfolio", "page"],
+        arrayLang: ["en", "fr", "ar", "co"],
+        arrayCur: ["egp", "usd", "eur"],
+        
         product: 'new product',
         price: 55
     },
     getters: {
-        getProduct: state => {
-            return state.product;
-        },
-        getPrice: state => {
-            return `$ ${state.price}`;
-        }
+       
     }
 });
