@@ -7,7 +7,7 @@ import { router } from './router';
 import { store } from './store/store';
 import { TweenMax, TimelineMax } from 'greensock';
 
-//
+// USE VUE RESOURCE
 Vue.use(VueResource);
 
 // RENDER
