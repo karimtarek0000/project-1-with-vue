@@ -154,9 +154,9 @@ import ButtonToggle from "./ButtonToggle";
 export default {
   data() {
     return {
-      navbarItems: ["/", "shop", "product", "blog", "portfolio", "page"],
-      arrayLang: ["en", "fr", "ar", "co"],
-      arrayCur: ["egp", "usd", "eur"],
+      navbarItems: '',
+      arrayLang: '',
+      arrayCur: '',
       statusHover: true,
       statusClick: true,
       lang: "en",
@@ -312,10 +312,24 @@ export default {
       }
     }
   },
+  computed: {
+
+    // GET FORM STATE
+    getFromState() {
+      this.navbarItems = this.$store.state.navbarItems;
+      this.arrayLang = this.$store.state.arrayLang;
+      this.arrayCur = this.$store.state.arrayCur;
+    }
+  },
   components: {
     appShappingCard: ShappingCard,
     appNoteBar: NoteBar,
     appButtonToggle: ButtonToggle
+  },
+  mounted() {
+    
+    // RUN COMPUTED
+    this.getFromState;
   }
 };
 </script>
