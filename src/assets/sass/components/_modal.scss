@@ -1,0 +1,85 @@
+.more {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    @include translate('top', 'left', 0, 0);
+    background-color: $two-color;
+    color: $font-color-three;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    z-index: 3000;
+
+    // MORE BOX
+    &_box {
+        background-color: $four-color;
+        width: 70%;
+        height: 70%;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+
+    // MORE CONTENT
+    &_content {
+        flex-basis: 58%;
+        order: 0;
+        color: $font-color-two;
+        padding: .4em;
+    }
+
+    // MORE HEAD
+    &_head {
+        font-size: .9em;
+        margin-top: 2.5em;
+    }
+
+    // MORE TITLE
+    &_title {
+        font-size: .6em;
+        margin: .7em 0 2em 0;
+        color: lighten($font-color-one, 15%);
+    }
+
+    // MORE PAR
+    &_par {
+    }
+
+    // MORE MORE PAR
+    &_more_par {
+        color: $font-color-one;
+    }
+
+    // MORE PAR AND MORE PAR
+    &_par, &_more_par {
+        font-size: .6em;
+        line-height: $line-height-paragraph;
+    }
+
+    // MORE IMAGE
+    &_image {
+        flex-basis: 40%;
+        order: -1;
+        overflow: hidden;
+
+        // MORE IMAGE IMG
+        & > img {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    // MORE ICON
+    &_icon {
+        position: absolute;
+        @include translate('top', 'right', 5rem, 15rem);
+        color: $four-color;
+        font-size: 2em;
+        cursor: pointer;
+    }
+}
