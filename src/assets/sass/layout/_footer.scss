@@ -1,0 +1,135 @@
+// FOOTER
+.footer {
+  background: linear-gradient(
+      45deg,
+      rgba($six-color, 0.9),
+      rgba($six-color, 0.7)
+    ),
+    url(../img/body/pattern.png);
+  font-size: 2.5rem;
+  padding: 3em;
+  color: $font-color-three;
+
+  // FOOTER SECTIONS
+  &_sections {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // FOOTER SECTION ONE
+  &_section_one {
+    display: flex;
+    flex-flow: wrap row;
+    margin-bottom: 1.8em;
+
+    // FOOTER SECTION BOX
+    &_box {
+      flex: 1 1 0;
+
+      // FOOTER SECTION BOX :NTH-OF-TYPE(1)
+      &:nth-of-type(1) {
+        flex-grow: 2.5;
+      }
+
+      // FOOTER SECTION BOX :NTH-OF-TYPE(2)
+      &:nth-of-type(4) {
+        flex-grow: 2;
+      }
+    }
+
+    // FOOTER SECTION HEAD
+    &_head {
+      font-size: 0.9em;
+      margin-bottom: 0.5em;
+    }
+
+    // FOOTER SECTION PAR
+    &_par {
+      font-size: 0.6em;
+      margin-bottom: 1.2em;
+      width: 70%;
+      line-height: $line-height-paragraph;
+      @extend %color;
+    }
+
+    // FOOTER SECTION CONTENT
+    &_content {
+      // FOOTER SECTION CONTENT ITEM
+      &_item {
+        // FOOTER SECTION CONTENT ITEM ALL DIRECT CHILD
+        & > * {
+          display: inline-block;
+          font-size: 0.6em;
+        }
+
+        // FOOTER SECTION CONTENT DIRECT CHILD SPAN
+        & > span {
+          @extend %color;
+        }
+      }
+
+      // FOOTER SECTION CONTENT LINK
+      &_link {
+        @extend %color;
+      }
+    }
+
+    // FOOTER SECTION ONE BOX SOCIAL
+    &_box_social {
+      // FOOTER SECTION ONE BOX SOCIAL UL
+      & ul {
+        margin-bottom: 0.8em;
+
+        // FOOTER SECTION ONE BOX SOCIAL UL DIRECT CHILD LI
+        & > li {
+          width: 49%;
+          display: inline-block;
+
+          // FOOTER SECTION ONE BOX SOCIAL DIRECT CHILD I
+          & i {
+            color: $font-color-three;
+            margin-right: 0.3em;
+          }
+        }
+      }
+    }
+
+    // FOOTER SECTION ONE BOX PAYMENT
+    &_box_payment {
+      // FOOTER SECTION ONE BOX PAYMENT LI
+      & li {
+        display: inline-block;
+        @extend %color;
+      }
+    }
+  }
+
+  // FOOTER SECTION TWO
+  &_section_two {
+    // FOOTER SECTION TWO CONTENT
+    &_content {
+      display: flex;
+      justify-content: center;
+    }
+
+    // FOOTER SECTION TWO ITEM
+    &_item {
+      font-size: 0.7em;
+
+      // FOOTER SECTION TWO ITEM :NOT LAST CHILD
+      &:not(:last-child) {
+        margin-right: 1.5em;
+      }
+    }
+
+    // FOOTER SECTION TWO LINK
+    &_link {
+      @extend %color;
+    }
+  }
+}
+
+// PLACE HOLDER COLOR
+%color {
+  color: rgba($font-color-three, 0.5);
+}
