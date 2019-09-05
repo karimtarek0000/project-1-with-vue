@@ -5,6 +5,10 @@
   @include translate("top", "left", 0, 0);
   z-index: 200;
 
+  @include respond(tablet-p) {
+    position: static;
+  }
+
   // NAVBAR NOTE
   &_note {
     font-size: 2rem;
@@ -81,6 +85,7 @@
       align-items: center;
 
       @include respond(tablet-p) {
+        height: 10.5rem;
         flex-direction: column;
         justify-content: space-around;
       }
@@ -184,7 +189,7 @@
       overflow: hidden;
 
       @include respond(tablet-p) {
-        height: 8.05rem;
+        height: 10.5rem;
       }
 
       // NAVBAR PRIMARY NAV LOGO
@@ -216,6 +221,7 @@
           opacity: 0;
           width: 100%;
           background-color: $four-color;
+          z-index: 2000;
         }
 
         // NAVBAR PRIMARY NAV ITEMS DIRECT CHILD LI
