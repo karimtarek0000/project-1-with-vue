@@ -5,12 +5,16 @@
 
     <!-- VIEW ROUTER -->
     <router-view></router-view>
+
+    <!-- FOOTER -->
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
 // ALL IMPORT
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default {
   methods: {
@@ -19,7 +23,8 @@ export default {
     }
   },
   components: {
-    appNavbar: Navbar
+    appNavbar: Navbar,
+    appFooter: Footer
   }
 };
 </script>
