@@ -245,6 +245,7 @@
       &--active {
         cursor: grabbing;
       }
+
     }
 
     // FEATURED PRODUCTS SLIDER SLIDE
@@ -262,6 +263,11 @@
       // RESPONSIVE
       @include respond(tablet-p) {
         width: calc(50% - 0.8em);
+      }
+
+      @include respond(phone) {
+        width: 100%;
+        margin-right: 0;
       }
 
       // FEATURED PRODUCTS SLIDER SLIDE IMAGE
@@ -432,3 +438,4 @@
     }
   }
 }
+
