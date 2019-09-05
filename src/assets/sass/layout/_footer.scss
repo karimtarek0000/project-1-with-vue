@@ -7,8 +7,17 @@
     ),
     url(../img/body/pattern.png);
   font-size: 2.5rem;
-  padding: 3em;
+  padding: 3em 3em 1em 3em;
   color: $font-color-three;
+
+  @include respond(tablet-p) {
+    font-size: 2.8em;
+    padding: 0.7em;
+  }
+
+  @include respond(phone) {
+    font-size: 5rem;
+  }
 
   // FOOTER SECTIONS
   &_sections {
@@ -25,6 +34,21 @@
     // FOOTER SECTION BOX
     &_box {
       flex: 1 1 0;
+
+      // RESPONSIVE
+      @include respond(tablet-l) {
+        flex-basis: 50%;
+      }
+
+      @include respond(phone) {
+        flex-basis: 100%;
+      }
+
+      &:not(:last-child) {
+        @include respond(tablet-l) {
+          margin-bottom: 1.5em;
+        }
+      }
 
       // FOOTER SECTION BOX :NTH-OF-TYPE(1)
       &:nth-of-type(1) {
@@ -50,6 +74,10 @@
       width: 70%;
       line-height: $line-height-paragraph;
       @extend %color;
+
+      @include respond(phone) {
+        width: 100%;
+      }
     }
 
     // FOOTER SECTION CONTENT
@@ -109,7 +137,9 @@
     // FOOTER SECTION TWO CONTENT
     &_content {
       display: flex;
+      flex-flow: wrap row;
       justify-content: center;
+      text-align: center;
     }
 
     // FOOTER SECTION TWO ITEM
@@ -119,12 +149,29 @@
       // FOOTER SECTION TWO ITEM :NOT LAST CHILD
       &:not(:last-child) {
         margin-right: 1.5em;
+
+        @include respond(phone) {
+          margin-right: 0;
+        }
+      }
+
+      @include respond(phone) {
+          width: 50%;
+          margin-bottom: .5em;
       }
     }
 
     // FOOTER SECTION TWO LINK
     &_link {
       @extend %color;
+    }
+
+    &_copyright {
+      margin-top: 1.4em;
+      & > p {
+        font-size: 0.6em;
+        @extend %color;
+      }
     }
   }
 }
