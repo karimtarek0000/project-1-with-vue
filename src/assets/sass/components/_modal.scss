@@ -16,7 +16,7 @@
         background-color: $four-color;
         width: 70%;
         height: 70%;
-        border-radius: 5px;
+        border-radius: $border-raduis-pixel;
         display: flex;
         justify-content: space-between;
         overflow: hidden;
