@@ -4,6 +4,7 @@
         <!-- START CONTAINER -->
         <div class="container">
 
+            <!-- START FOOTER SECTIONS -->
             <div class="footer_sections text-capitalize">
 
                 <!-- FOOTER SECTION ONE -->
@@ -140,6 +141,7 @@
                 </div>
 
             </div>
+            <!-- START FOOTER SECTIONS -->
 
         </div>
         <!-- END CONTAINER -->
