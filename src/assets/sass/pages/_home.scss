@@ -684,10 +684,26 @@
 
     // OUR BRANDS FOOTER FORM
     &_form {
+      width: fit-content;
+      margin: auto;
+
+      & label {
+        display: block;
+        font-size: 0.5em;
+        text-align: left;
+        margin-bottom: 0.7em;
+        padding-left: 0.6em;
+
+        // RESPONSIVE
+        @include respond(phone) {
+          font-size: 0.9em;
+        }
+      }
+
       & input[type="email"] {
         border: 1px solid rgba(168, 35, 83, 0.4);
         @extend %styleOurBrandsFooter;
-        width: 35%;
+        width: 40rem;
         @include transition(all, 0.5s, ease-in-out, false);
 
         // OUR BRANDS FOOTER FORM INPUT :FOCUS
@@ -702,11 +718,11 @@
 
         // RESPONSIVE
         @include respond(tablet-p) {
-          width: 50%;
+          width: 40rem;
         }
 
         @include respond(phone) {
-          width: 70%;
+          width: 30rem;
           font-size: 0.8em;
         }
       }
@@ -759,34 +775,28 @@
     & > div {
       width: 10%;
       overflow: hidden;
-      opacity: .5;
-      @include transition(all, .5s, ease-in-out, false);
+      opacity: 0.5;
+      @include transition(all, 0.5s, ease-in-out, false);
 
       // RESPONSIVE
       @include respond(tablet-p) {
         width: 49%;
         opacity: 1;
       }
-      
 
-        // TRUST BRANDS SVG
-        & > svg {
-          @include svg(100%, 100%, false);
-          
-          // RESPONSIVE
-          @include respond(tablet-p) {
-            @include svg(50%, 50%, false);
-          }
+      // TRUST BRANDS SVG
+      & > svg {
+        @include svg(100%, 100%, false);
 
-          @include respond(phone) {
-            @include svg(60%, 60%, false);
-          }
-
+        // RESPONSIVE
+        @include respond(tablet-p) {
+          @include svg(50%, 50%, false);
         }
+
+        @include respond(phone) {
+          @include svg(60%, 60%, false);
+        }
+      }
     }
-
-   
   }
-
-
 }
