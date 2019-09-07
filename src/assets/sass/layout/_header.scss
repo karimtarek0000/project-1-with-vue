@@ -50,8 +50,8 @@
     font-size: 2rem;
     @include translate("top", "left", 0, 5%);
     z-index: 100;
-    // background-color: white;
 
+    // RESPONSIVE
     @include respond(phone) {
         width: 100%;
         @include translate("top", "left", 0, 0);

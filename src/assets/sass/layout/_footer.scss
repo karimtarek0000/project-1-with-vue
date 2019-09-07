@@ -73,7 +73,7 @@
       margin-bottom: 1.2em;
       width: 70%;
       line-height: $line-height-paragraph;
-      @extend %color;
+      @extend %styleColor;
 
       @include respond(phone) {
         width: 100%;
@@ -92,13 +92,13 @@
 
         // FOOTER SECTION CONTENT DIRECT CHILD SPAN
         & > span {
-          @extend %color;
+          @extend %styleColor;
         }
       }
 
       // FOOTER SECTION CONTENT LINK
       &_link {
-        @extend %color;
+        @extend %styleColor;
       }
     }
 
@@ -127,7 +127,7 @@
       // FOOTER SECTION ONE BOX PAYMENT LI
       & li {
         display: inline-block;
-        @extend %color;
+        @extend %styleColor;
       }
     }
   }
@@ -150,33 +150,31 @@
       &:not(:last-child) {
         margin-right: 1.5em;
 
+        // RESPONSIVE
         @include respond(phone) {
           margin-right: 0;
         }
       }
 
+      // RESPONSIVE
       @include respond(phone) {
-          width: 50%;
-          margin-bottom: .5em;
+        width: 50%;
+        margin-bottom: 0.5em;
       }
     }
 
     // FOOTER SECTION TWO LINK
     &_link {
-      @extend %color;
+      @extend %styleColor;
     }
 
+    // FOOTER SECTION TWO COPYRIGHT
     &_copyright {
       margin-top: 1.4em;
       & > p {
         font-size: 0.6em;
-        @extend %color;
+        @extend %styleColor;
       }
     }
   }
-}
-
-// PLACE HOLDER COLOR
-%color {
-  color: rgba($font-color-three, 0.5);
 }

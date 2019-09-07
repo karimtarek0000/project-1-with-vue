@@ -17,7 +17,7 @@ const mode = 'development';
 const output = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/js/[name].js',
-    publicPath: '/'
+    publicPath: '../'
 };
 
 // DEVSERVER

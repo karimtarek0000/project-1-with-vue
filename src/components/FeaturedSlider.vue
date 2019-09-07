@@ -621,6 +621,7 @@ export default {
     };
   },
   computed: {
+
     // WHAT WIDTH SCREEN
     whatWidthScreen() {
       if(window.innerWidth <= 600) {
@@ -677,6 +678,7 @@ export default {
 
       slider.style.scrollBehavior = "none";
     }
+
   },
   methods: {
     // MOUSE DOWN
@@ -741,7 +743,7 @@ export default {
       slider.scrollLeft = this.scrollLeftDown - this.minDM;
 
       // MINUS SCROLL WIDTH AND CLIENT WIDTH
-      this.minSclientWidthScrollWidth = slider.scrollWidth - slider.clientWidth;
+      this.minSclientWidthScrollWidth = slider.scrollWidth - slider.offsetWidth;
 
       // POST SLIDER SCROLL LEFT DATA
       this.slider = slider.scrollLeft;
@@ -827,7 +829,7 @@ export default {
       if (count <= child && count >= 0) {
         this.counter = sumWidthMargin * count;
         slider.scrollLeft = this.counter;
-      } else if (count > child) {
+      } else if (count >= child) {
         slider.scrollLeft = 0;
         this.countSlide = 0;
       } else if (count < 0) {

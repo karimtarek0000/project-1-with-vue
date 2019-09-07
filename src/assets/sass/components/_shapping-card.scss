@@ -8,6 +8,12 @@
         & > svg {
           width: 2.5rem;
           height: 2.5rem;
+
+          // RESPONSIVE
+          @include respond(phone) {
+            width: 3.5rem;
+            height: 3.5rem;
+          }
         }
 
         // NAVBAR PRIMARY NAV SHAPPING ICON
@@ -25,10 +31,16 @@
         // NAVBAR PRIMARY NAV SHAPPING BOX
         &_boxs {
           position: absolute;
-          width: 30%;
+          width: 45%;
           @include translate("top", "right", 100%, 0);
           background-color: $four-color;
           padding: 0 0.3em;
+          z-index: 300;
+
+          // RESPONSIVE
+          @include respond(phone) {
+            width: 100%;
+          }
         }
 
         &_box {

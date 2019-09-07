@@ -23,7 +23,7 @@
                             </li>
                             <li class="footer_section_one_content_item">
                                 <i class="fas fa-envelope fa-fw"></i>
-                                <span>info@psdfreebies.com</span>
+                                <span class="text-lowercase">info@psdfreebies.com</span>
                             </li>
                         </ul>
                     </div>

@@ -3,26 +3,36 @@
   list-style: none;
 }
 
+// TEXT CAPITALIZE
 .text-capitalize {
   text-transform: capitalize;
 }
 
+// TEXT UPPER CASE
 .text-uppercase {
   text-transform: uppercase;
 }
 
+// TEXT LOWER CASE
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+// REST LINK :LINK AND :VISITED
 .reset-link:link,
 .reset-link:visited {
   text-decoration: none;
   display: block;
 }
 
+// RESET BUTTON
 .reset-button {
   background: none;
   outline: none;
   border: none;
 }
 
+// RESET INPUT
 .reset-input {
   -webkit-appearance: none;
   appearance: none;
@@ -31,14 +41,17 @@
   font-family: inherit;
 }
 
+// TEXT CENTER
 .text-center {
   text-align: center;
 }
 
+// DISPLAY NONE
 .display-none {
   display: none;
 }
 
+// CURSOR POINTER
 .cursor-pointer {
   cursor: pointer;
 }

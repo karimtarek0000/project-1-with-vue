@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav id="navbar" class="navbar">
     <!-- START NAVBAR NOTE -->
     <app-note-bar></app-note-bar>
     <!-- END NAVBAR NOTE -->
@@ -44,7 +44,11 @@
                 </div>
 
                 <!-- NAVBAR PRIMARY INFO OPTIONS SELECT -->
-                <ul @click="getDataSelect" class="navbar_primary_info_options_select list-unstyled">
+                <ul
+                  id="dataSelectLang"
+                  @click="getDataSelect"
+                  class="navbar_primary_info_options_select list-unstyled"
+                >
                   <li
                     class="navbar_primary_info_options_select_item"
                     v-for="lang in arrayLang"
@@ -68,7 +72,11 @@
                 </div>
 
                 <!-- NAVBAR PRIMARY INFO OPTIONS SELECT -->
-                <ul @click="getDataSelect" class="navbar_primary_info_options_select list-unstyled">
+                <ul
+                  id="dataSelectCur"
+                  @click="getDataSelect"
+                  class="navbar_primary_info_options_select list-unstyled"
+                >
                   <li
                     class="navbar_primary_info_options_select_item"
                     v-for="cur in arrayCur"
@@ -92,6 +100,7 @@
             <!-- NAVBAR PRIMARY NAV ITEMS -->
             <ul id="navbar-primary" class="navbar_primary_nav_items list-unstyled">
               <router-link
+                @click="paddingBody"
                 v-for="item in navbarItems"
                 tag="li"
                 :to="item"
@@ -150,20 +159,23 @@
 import NoteBar from "./NoteBar";
 import ShappingCard from "./ShappingCard";
 import ButtonToggle from "./ButtonToggle";
+import { maxHeaderSize } from "http";
 
 export default {
   data() {
     return {
-      navbarItems: '',
-      arrayLang: '',
-      arrayCur: '',
+      navbarItems: "",
+      arrayLang: "",
+      arrayCur: "",
       statusHover: true,
       statusClick: true,
       lang: "en",
-      cur: "usd"
+      cur: "usd",
+      st: true
     };
   },
   methods: {
+
     // ANIMATION SEARCH HOME
     animationSearchHome(e) {
       // IF STATUS CLICK EQUAL TRUE WILL CONVERT PREVENT DEFAULT IF NO WILL CONVERT FALSE NO PREVENT DEFAULT
@@ -253,7 +265,7 @@ export default {
             childParent[cur].classList.add("active");
 
             // CREATE ANIAMTION OPEN LIST ITEM
-            TweenMax.set(element, { height: "auto" });
+            TweenMax.set(element, { height: "100px", overflow: "scroll" });
             TweenMax.from(element, 1, { height: 0, ease: Power1.easeInOut });
           } else {
             // REMOVE CLASS ACTIVE FROM ELEMENT
@@ -263,7 +275,7 @@ export default {
             TweenMax.fromTo(
               element,
               1,
-              { height: "auto" },
+              { height: "100px" },
               { height: 0, ease: Power1.easeInOut }
             );
           }
@@ -273,6 +285,7 @@ export default {
 
     // GET DATA SELECT LIST
     getDataSelect(e) {
+      // ALL VARIABLES
       let getData = e.target.textContent;
       const parent = e.target.parentElement.parentElement.children;
       const parentSelect = e.target.parentElement;
@@ -283,43 +296,77 @@ export default {
           if (parent[cur].children[cur].nodeName == "SPAN") {
             parent[cur].children[cur].textContent = this.cur;
 
-            // RUNNING FUNCTION
-            closeList();
+            // RUNNING FUNCTION CLOSE LIST
+            this.closeList(parentSelect);
           }
         } else if (parent[cur].id == "lang") {
           this.lang = getData;
           if (parent[cur].children[cur].nodeName == "SPAN") {
             parent[cur].children[cur].textContent = this.lang;
 
-            // RUNNING FUNCTION
-            closeList();
+            // RUNNING FUNCTION CLOSE LIST
+            this.closeList(parentSelect);
           }
         }
       }
+    },
 
-      // CLOSE LIST
-      function closeList() {
-        // ADD CLASS ACTIVE TO ELEMENT
-        parentSelect.classList.remove("active");
+    //
+    closeList(parentSelect) {
+      // ADD CLASS ACTIVE TO ELEMENT
+      parentSelect.classList.remove("active");
 
-        // CREATE ANIMATION CLOSE LIST ITEM
-        TweenMax.fromTo(
-          parentSelect,
-          1,
-          { height: "auto" },
-          { height: 0, ease: Power1.easeInOut }
-        );
-      }
-    }
+      // CREATE ANIMATION CLOSE LIST ITEM
+      TweenMax.fromTo(
+        parentSelect,
+        1,
+        { height: "100px" },
+        { height: 0, ease: Power1.easeInOut }
+      );
+    },
+
+    // CLICK WINDOW
+    clickWindow() {
+      // ALL VARIABLES
+      const dataSelectLang = document.getElementById("dataSelectLang");
+      const dataSelectCur = document.getElementById("dataSelectCur");
+      const elements = [dataSelectLang, dataSelectCur];
+
+      // IF CLICK WINDOW WILL BE CLOSE ALL LIST CURRANCY AND LANGUAGE
+      window.addEventListener("click", () => {
+        for (const cur in elements) {
+          if (elements[cur].clientHeight > 0) this.closeList(elements[cur]);
+        }
+      });
+    },
+
   },
   computed: {
-
+    
     // GET FORM STATE
     getFromState() {
       this.navbarItems = this.$store.state.navbarItems;
       this.arrayLang = this.$store.state.arrayLang;
       this.arrayCur = this.$store.state.arrayCur;
-    }
+    },
+
+    // PADDING BODY
+    paddingBody() {
+
+      if (this.$route.name !== "home") {
+
+        const navbar = document.getElementById("navbar");
+        const getHeightNavbar = window.getComputedStyle(navbar);
+
+        document.body.style.paddingTop = getHeightNavbar.height;
+
+      } else {
+
+        document.body.style.paddingTop = "0";
+
+      }
+
+    },
   },
   components: {
     appShappingCard: ShappingCard,
@@ -327,9 +374,11 @@ export default {
     appButtonToggle: ButtonToggle
   },
   mounted() {
-    
     // RUN COMPUTED
     this.getFromState;
+
+    // RUNNING CLICK WINDOW
+    this.clickWindow();
   }
 };
 </script>

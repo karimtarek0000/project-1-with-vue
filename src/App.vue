@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- APP NAVBAR -->
-    <app-navbar v-if="!hideNavbar()"></app-navbar>
+    <app-navbar v-if="!hideNavbar"></app-navbar>
 
     <!-- VIEW ROUTER -->
     <router-view></router-view>
@@ -17,7 +17,20 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 export default {
-  methods: {
+  computed: {
+    // PADDING BODY
+    // paddingBody() {
+    //   if (this.$route.name !== "home") {
+    //     const navbar = document.getElementById("navbar");
+    //     const getHeightNavbar = window.getComputedStyle(navbar);
+
+    //     document.body.style.paddingTop = getHeightNavbar.height;
+    //   } else {
+    //     document.body.style.paddingTop = "0";
+    //   }
+    // },
+
+    // HIDE NAVBAR
     hideNavbar() {
       return this.$route.path === "/error";
     }

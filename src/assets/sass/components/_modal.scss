@@ -35,7 +35,7 @@
     @include respond(phone) {
       flex-direction: column;
       width: 95%;
-      height: 50%;
+      height: 70%;
     }
   }
 
@@ -137,7 +137,7 @@
     }
 
     @include respond(phone) {
-      @include translate("top", "right", 20rem, 1.5rem);
+      @include translate("top", "right", 10rem, 1.5rem);
     }
   }
 }

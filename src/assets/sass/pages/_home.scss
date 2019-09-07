@@ -53,14 +53,11 @@
 
       // FEATURED PRODUCTS HEADINGS ICON SVG
       & > svg {
-        fill: $font-color-one;
-        width: 50%;
-        height: 50%;
+        @include svg(50%, 50%, $font-color-one);
 
         // RESPONSIVE
         @include respond(tablet-p) {
-          width: 100%;
-          height: 100%;
+          @include svg(100%, 100%, $font-color-one);
         }
       }
     }
@@ -176,6 +173,7 @@
             // FEATURED PRODUCTS QUICLY SHAPPING CONTENT HEADING SPAN (1)
             &:nth-of-type(1) {
               color: $font-color-two;
+              line-height: 1.5rem;
             }
 
             // FEATURED PRODUCTS QUICLY SHAPPING CONTENT HEADING SPAN(2)
@@ -298,6 +296,9 @@
 
       // FEATURED PRODUCTS SLIDER SLIDE CAPTION
       &_caption {
+        @include respond(tablet-p) {
+          padding-left: 0.5em;
+        }
       }
 
       // FEATURED PRODUCTS SLIDER SLIDE HEAD
@@ -333,14 +334,11 @@
           cursor: pointer;
 
           & > svg {
-            height: 1.5rem;
-            width: 1.5rem;
-            fill: orange;
+            @include svg(1.5rem, 1.5rem, $color-svg);
 
             // RESPONSIVE
             @include respond(tablet-p) {
-              height: 2rem;
-              width: 2rem;
+              @include svg(2rem, 2rem, $color-svg);
             }
           }
         }
@@ -348,21 +346,18 @@
 
       // FEATURED PRODUCTS SLIDER SLIDE PRICE
       &_price {
-        color: $font-color-two;
-        font-weight: 700;
+        @extend %stylePrice;
       }
 
       // FEATURED PRODUCTS SLIDER SLIDE DISCOUNT
       &_discount {
-        color: lighten($font-color-one, 15%);
-        text-decoration: line-through;
+        @extend %styleDiscount;
       }
 
       // FEATURED PRODUCTS SLIDER PRICE AND DISCOUNT
       &_price,
       &_discount {
-        width: 50%;
-        font-size: 0.8em;
+        @extend %stylePriceandDiscount;
 
         // RESPONSIVE
         @include respond(tablet-p) {
@@ -508,4 +503,284 @@
       font-size: 0.5em;
     }
   }
+}
+
+//////////////////////////////////////
+// SECTION OUR BRANDS
+.our_brands {
+  margin-top: -6rem;
+
+  // RESPONSIVE
+  @include respond(tablet-p) {
+    position: relative;
+  }
+
+  // OUR BRANDS BOX
+  &_box {
+    background-color: $four-color;
+    font-size: 3rem;
+    padding: 2em 0.5em 0.5em 0.5em;
+  }
+
+  // OUR BRANDS HEADING
+  &_heading {
+    // OUR BRANDS HEADING HEAD
+    &_head {
+      font-size: $font-size-head-section;
+      margin-bottom: 1em;
+      color: $font-color-two;
+
+      // RESPONSIVE
+      @include respond(phone) {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  // OUR BRANDS CONTENT
+  &_content {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(black, 0.2);
+
+    // OUR BRANDS CONTENT BOX
+    &_box {
+      display: flex;
+      flex-direction: column;
+
+      // OUR BRANDS CONTENT BOX --1
+      &--1 {
+      }
+
+      // OUR BRANDS CONTENT BOX --2
+      &--2 {
+      }
+
+      // OUR BRANDS CONTENT BOX CONTENT
+      &_content {
+        display: flex;
+        padding-bottom: 0.5em;
+
+        // OUR BRANDS CONTENT BOX CONTENT :NOT(:LAST-CHILD)
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba(black, 0.2);
+          margin-bottom: 0.9em;
+        }
+
+        // OUR BRANDS CONTENT IMAGE
+        &_image {
+          margin-right: 0.5em;
+          overflow: hidden;
+
+          // OUR BRANDS CONTENT IMAGE IMG
+          & > img {
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        // OUR BRANDS CONTENT INFO
+        &_info {
+        }
+
+        // OUR BRANDS CONTENT HEAD
+        &_head {
+          font-size: 0.7em;
+          color: $font-color-two;
+
+          // RESPONSIVE
+          @include respond(phone) {
+            font-size: 1em;
+          }
+        }
+
+        // OUR BRANDS CONTENT RATING
+        &_rating {
+          // RESPONSIVE
+          @include respond(phone) {
+            margin: 0.5em 0;
+          }
+
+          // OUR BRANDS CONTENT RATING LI
+          & > li {
+            display: inline-block;
+          }
+
+          // OUR BRANDS CONTENT RATING SVG
+          & svg {
+            @include svg(1.5rem, 1.5rem, $color-svg);
+
+            // RESPONSIVE
+            @include respond(tablet-p) {
+              @include svg(2rem, 2rem, $color-svg);
+            }
+          }
+        }
+
+        // OUR BRANDS CONTENT PRICE
+        &_price {
+          @extend %stylePrice;
+        }
+
+        // OUR BRANDS CONTENT DISCOUNT
+        &_discount {
+          @extend %styleDiscount;
+        }
+
+        // OUR BRANDS CONTENT PRICE AND DISCOUNT
+        &_price,
+        &_discount {
+          @extend %stylePriceandDiscount;
+
+          // RESPONSIVE
+          @include respond(phone) {
+            font-size: 1.1em;
+          }
+        }
+      }
+
+      // OUR BRANDS IMAGE
+      &_image {
+        align-self: center;
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+          position: absolute;
+          @include translate("top", "right", 0, -100%);
+        }
+      }
+    }
+  }
+
+  // OUR BRANDS FOOTER
+  &_footer {
+    padding: 2em 1.3em;
+
+    // OUR BRANDS FOOTER HEAD
+    &_head {
+      font-size: 0.8em;
+      color: $font-color-two;
+
+      // RESPONSIVE
+      @include respond(phone) {
+        font-size: 1.2em;
+      }
+    }
+
+    // OUR BRANDS FOOTER PAR
+    &_par {
+      font-size: 0.5em;
+      margin: 0.9em 0 1.5em 0;
+      color: $font-color-one;
+
+      // RESPONSIVE
+      @include respond(phone) {
+        font-size: 0.7em;
+      }
+    }
+
+    // OUR BRANDS FOOTER FORM
+    &_form {
+      & input[type="email"] {
+        border: 1px solid rgba(168, 35, 83, 0.4);
+        @extend %styleOurBrandsFooter;
+        width: 35%;
+        @include transition(all, 0.5s, ease-in-out, false);
+
+        // OUR BRANDS FOOTER FORM INPUT :FOCUS
+        &:focus {
+          border-color: rgba(168, 35, 83, 0.8);
+        }
+
+        // OUR BRANDS FOOTER FORM INPUT :PLACEHOLDER
+        &::placeholder {
+          text-transform: capitalize;
+        }
+
+        // RESPONSIVE
+        @include respond(tablet-p) {
+          width: 50%;
+        }
+
+        @include respond(phone) {
+          width: 70%;
+          font-size: 0.8em;
+        }
+      }
+
+      // OUR BRANDS FOOTER FORM BUTTON
+      & > button {
+        background-color: $two-color;
+        color: $font-color-three;
+        @extend %styleOurBrandsFooter;
+        @include transition(all, 0.5s, ease-in-out, false);
+
+        // OUR BRANDS FOOTER FORM BUTTON:HOVER AND ACTIVE
+        &:hover,
+        &:active {
+          background-color: lighten($two-color, 20%);
+        }
+
+        // RESPONSIVE
+        @include respond(phone) {
+          font-size: 0.8em;
+        }
+      }
+
+      // OUR BRANDS FOOTER FORM INPUT
+      & input {
+        font-family: inherit;
+      }
+    }
+  }
+}
+
+//////////////////////////////////////
+// SECTION TRUST BRANDS
+.trust_brands {
+  background-color: $seven-color;
+  padding: 12rem;
+
+  @include respond(phone) {
+    padding: 5rem;
+  }
+
+  // TRUST BRANDS
+  &_box {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+
+    & > div {
+      width: 10%;
+      overflow: hidden;
+
+      @include respond(tablet-p) {
+        width: 49%;
+      }
+      
+
+        // TRUST BRANDS SVG
+        & > svg {
+          @include svg(100%, 100%, false);
+          
+          // RESPONSIVE
+          @include respond(tablet-p) {
+            @include svg(50%, 50%, false);
+          }
+
+          @include respond(phone) {
+            @include svg(60%, 60%, false);
+          }
+
+        }
+    }
+
+   
+  }
+
+
 }

@@ -63,18 +63,24 @@ Screen big from 1800 to xxxxxxl;
     
 }
 
-////////////////////////////
-// SIZE SVG
-@mixin sizeSVG ($value) {
-    $false: '';
-
-    @if $value == $false {
-        width: 12.5rem;
-        height: 14rem;
-    }@else {
-        width: 12.5rem;
-        height: $value;
+// SVG
+@mixin svg($height, $width, $fill) {
+    height: $height;
+    width: $width;
+    @if($fill) {
+        fill: $fill;
     }
-};
+    cursor: pointer;
+}
+
+// TRANSITION
+@mixin transition($el, $duration, $timeFunction, $delay) {
+    transition-property: $el;
+    transition-duration: $duration;
+    transition-timing-function: $timeFunction;
+    @if($delay) {
+        transition-delay: $delay;
+    }
+}
 
 

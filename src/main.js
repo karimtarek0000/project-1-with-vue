@@ -10,6 +10,9 @@ import { TweenMax, TimelineMax } from 'greensock';
 // USE VUE RESOURCE
 Vue.use(VueResource);
 
+// DISPLAY WARNING
+Vue.config.productionTip = false;
+
 // RENDER
 new Vue({
     router,
