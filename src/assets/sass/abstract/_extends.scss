@@ -1,0 +1,28 @@
+// STYLE PRICE AND DISCOUNT
+%stylePriceandDiscount {
+  width: 50%;
+  font-size: 0.8em;
+}
+
+// STYLE DISCOUNT
+%styleDiscount {
+  color: lighten($font-color-one, 15%);
+  text-decoration: line-through;
+}
+
+// STYLE PRICE
+%stylePrice {
+  color: $font-color-two;
+  font-weight: 700;
+}
+
+// STYLE FOOTER
+%styleColor {
+  color: rgba($font-color-three, 0.5);
+}
+
+// STYLE OUR BRANDS FOOTER
+%styleOurBrandsFooter {
+  padding: 0.9em 0.6em;
+  font-size: 0.5em;
+}
