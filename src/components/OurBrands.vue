@@ -11,9 +11,7 @@
 
         <!-- OUR BRANDS BOX -->
         <div class="our_brands_content">
-
           <div class="our_brands_content_box our_brands_content_box--1">
-
             <div class="our_brands_content_box_content">
               <div class="our_brands_content_box_content_image">
                 <img src="../assets/img/our-brands/image-1.png" alt="image-1" />
@@ -247,15 +245,13 @@
                 <span class="our_brands_content_box_content_discount">$600</span>
               </div>
             </div>
-
           </div>
 
           <div id="offer" class="our_brands_content_box_image">
-              <img src="../assets/img/our-brands/offer.png" alt="our-brands">
+            <img src="../assets/img/our-brands/offer.png" alt="our-brands" />
           </div>
 
           <div class="our_brands_content_box our_brands_content_box--2">
-
             <div class="our_brands_content_box_content">
               <div class="our_brands_content_box_content_image">
                 <img src="../assets/img/our-brands/image-1.png" alt="image-1" />
@@ -489,21 +485,26 @@
                 <span class="our_brands_content_box_content_discount">$600</span>
               </div>
             </div>
-
-            </div>
-
+          </div>
         </div>
 
         <!-- OUR BRANDS FOOTER -->
         <div class="our_brands_footer text-center">
-            <h4 class="our_brands_footer_head">never miss any fashion trending</h4>
-            <p class="our_brands_footer_par">praesent mauris. fusce nec tellus sed augue semper porta.</p>
-            <form class="our_brands_footer_form">
-                <input class="reset-input" type="email" placeholder="enter your email">
-                <button class="cursor-pointer text-capitalize reset-button" type="submit">subscribe</button>
-            </form>
+          <h4 class="our_brands_footer_head">never miss any fashion trending</h4>
+          <p class="our_brands_footer_par">praesent mauris. fusce nec tellus sed augue semper porta.</p>
+          <form @submit="validationForm" class="our_brands_footer_form">
+            <label for="email">{{ labelEmail }}</label>
+            <input
+              id="email"
+              autocomplete="off"
+              @keyup="valdationEmail"
+              class="reset-input"
+              type="email"
+              placeholder="enter your email"
+            />
+            <button class="cursor-pointer text-capitalize reset-button" type="submit">subscribe</button>
+          </form>
         </div>
-
       </div>
       <!-- END OUR BRANDS BOX -->
     </div>
@@ -513,49 +514,88 @@
 
 <script>
 export default {
-    data() {
-        return {
-            status: false
+  data() {
+    return {
+      errors: {
+        email: "sorr'y email require"
+      },
+      valid: {
+        email: "done"
+      },
+      status: false,
+      labelEmail: "enter your email",
+      email: false
+    };
+  },
+  methods: {
+    // SHOW OFFER
+    showOffer() {
+      // ALL VARIABLES
+      const offer = document.getElementById("offer"),
+        ourBrands = document.getElementById("ourBrands");
+
+      // TIME LINE MAX
+      const tl = new TimelineMax();
+
+      if (window.innerWidth <= 900) {
+        if (document.documentElement.scrollTop >= ourBrands.offsetTop) {
+          tl.fromTo(
+            offer,
+            1,
+            { right: "-100%" },
+            { right: "50%", x: "50%", ease: Power1.easeInOut }
+          ).fromTo(
+            offer,
+            1,
+            { right: "50%" },
+            { right: "-100%", ease: Power1.easeInOut, delay: 5 }
+          );
+
+          // STATUS
+          this.status = true;
         }
+      }
     },
-    methods: {
 
-        // SHOW OFFER
-        showOffer() {
+    // VALIDATION EMAIL
+    valdationEmail(e) {
+      // REG EXP EMAIL
+      const RegExEmail = new RegExp(
+        /^[a-z]{4,}[@]{1}[a-z]{3,5}[.]{1}[a-z]{3}$/
+      );
 
-            // ALL VARIABLES
-            const offer = document.getElementById('offer'),
-            ourBrands = document.getElementById('ourBrands');
-
-            // TIME LINE MAX
-            const tl = new TimelineMax();
-            
-            if(window.innerWidth <= 900) {
-                if(document.documentElement.scrollTop >= ourBrands.offsetTop) {
-                    tl 
-                        .fromTo(offer, 1, {right: '-100%'}, {right: '50%', x: '50%', ease:Power1.easeInOut})
-                        .fromTo(offer, 1, {right: '50%'}, {right: '-100%', ease:Power1.easeInOut, delay: 5});
-
-                    // STATUS
-                    this.status = true;
-                }
-            }
-
-        }
+      // IF STATEMENT EMAIL
+      if (e.target.value.match(RegExEmail)) {
+        this.email = true;
+        this.labelEmail = this.valid.email;
+      } else {
+        this.email = false;
+        this.labelEmail = this.errors.email;
+      }
     },
-    watch: {
 
-        // WATCH STATUS
-        status(el) {
-            if(el) window.removeEventListener('scroll', this.showOffer);
-        }
-    },
-    created() {
+    // VALIDATION FORM
+    validationForm(e) {
+      // IF TRUE WILL SEND
+      if (this.email) return;
 
-        // WINDOW SCROLL WILL BE RUNNING FUNCTION SHOW OFFER
-        window.addEventListener('scroll', this.showOffer);
+      // LABELS
+      this.labelEmail = this.errors.email;
+
+      // WILL BE NOT SENT ANY THINK
+      e.preventDefault();
     }
-  
+  },
+  watch: {
+    // WATCH STATUS
+    status(el) {
+      if (el) window.removeEventListener("scroll", this.showOffer);
+    }
+  },
+  created() {
+    // WINDOW SCROLL WILL BE RUNNING FUNCTION SHOW OFFER
+    window.addEventListener("scroll", this.showOffer);
+  }
 };
 </script>
 
