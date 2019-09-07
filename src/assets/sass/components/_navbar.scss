@@ -28,6 +28,11 @@
       font-size: 1em;
       color: $font-color-three;
       font-weight: 700;
+
+      // RESPONSIVE
+      @include respond(phone) {
+        font-size: 1.2em;
+      }
     }
 
     // NAVBAR NOTE CLOSE
@@ -106,6 +111,14 @@
         // NAVBAR PRIMARY INFO CONTENT DIRECT CHILD
         & > * {
           display: inline-block;
+
+          // RESPONSIVE
+          @include respond(phone) {
+            text-align: center;
+            margin-bottom: .5em;
+            display: block;
+            font-size: 1.2em;
+          }
         }
 
         // NAVBAR PRIMARY INFO TITLE
@@ -115,6 +128,11 @@
         // NAVBAR PRIMARY INFO EMAIL
         &_email {
           margin-left: 2.5em;
+
+           // RESPONSIVE
+           @include respond(phone) {
+            margin-left: 0;
+          }
 
           // NAVBAR PRIMARY INFO EMAIL DIRECT CHILD SPAN
           & > span {
@@ -317,11 +335,6 @@
               width: 5rem;
               height: 5rem;
             }
-
-            // @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1900px) {
-            //   width: 3.2rem;
-            //   height: 3.2rem;
-            // }
           }
         }
       }
