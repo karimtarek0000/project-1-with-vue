@@ -744,6 +744,7 @@
   background-color: $seven-color;
   padding: 12rem;
 
+  // RESPONSIVE
   @include respond(phone) {
     padding: 5rem;
   }
@@ -754,12 +755,17 @@
     flex-flow: wrap row;
     justify-content: space-around;
 
+    // TRUST BRANDS DIV SVG
     & > div {
       width: 10%;
       overflow: hidden;
+      opacity: .5;
+      @include transition(all, .5s, ease-in-out, false);
 
+      // RESPONSIVE
       @include respond(tablet-p) {
         width: 49%;
+        opacity: 1;
       }
       
 
