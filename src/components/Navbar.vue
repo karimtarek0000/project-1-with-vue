@@ -353,7 +353,7 @@ export default {
     // PADDING BODY
     paddingBody() {
 
-      if (this.$route.name !== "home") {
+      if (this.$route.name !== "home" && window.innerWidth > 900) {
 
         const navbar = document.getElementById("navbar");
         const getHeightNavbar = window.getComputedStyle(navbar);
