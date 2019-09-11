@@ -18,7 +18,6 @@
 
         // NAVBAR PRIMARY NAV SHAPPING ICON
         &_icon {
-
           // RESPONSIVE
           @include respond(tablet-p) {
             margin-left: 1rem;
@@ -31,27 +30,38 @@
         // NAVBAR PRIMARY NAV SHAPPING BOX
         &_boxs {
           position: absolute;
-          width: 45%;
+          width: 35%;
           @include translate("top", "right", 100%, 0);
           background-color: $four-color;
-          padding: 0 0.3em;
           z-index: 300;
 
           // RESPONSIVE
           @include respond(phone) {
             width: 100%;
           }
+
+          &_inner {
+            height: 30rem;
+            overflow: auto;
+          }
         }
 
         &_box {
+          display: flex;
           position: relative;
           margin-top: 0.5em;
-          display: flex;
+          height: 15rem;
+
+
+          &:not(:last-child) {
+            border-bottom: 1px solid lighten($two-color, 50%);
+            padding-bottom: .5em;
+          }
         }
 
         &_close {
           position: absolute;
-          @include translate("top", "right", 0, 0);
+          @include translate("top", "right", 2%, 2%);
           width: 2rem;
           height: 2rem;
           border-radius: 50%;
@@ -59,7 +69,7 @@
           color: $font-color-two;
           text-align: center;
           line-height: 2rem;
-          font-size: 1.5em;
+          font-size: 2em;
           cursor: pointer;
         }
 
@@ -68,10 +78,10 @@
           height: 100%;
 
           & > img {
-            object-fit: cover;
             width: 100%;
             height: 100%;
             max-width: 100%;
+            object-fit: contain;
           }
         }
 
@@ -88,10 +98,13 @@
 
         // NAVBAR PRIMARY NAV SHAPPING NAME PRODUCT
         &_name_product {
+          font-size: 1.3em;
+          font-weight: 700;
         }
 
         // NAVBAR PRIMARY NAV SHAPPING PRODUCT PRICE
         &_product_price {
+          font-size: 1.1em;
           padding: 0.8em 0;
         }
 
@@ -105,6 +118,21 @@
               height: 15px;
             }
           }
+        }
+
+        &_actions {
+          display: flex;
+          align-items: center;
+
+          & > * {
+            flex: 1 1 0;
+          }
+        }
+
+        &_total_price {
+        }
+
+        &_payment {
         }
       }
     }

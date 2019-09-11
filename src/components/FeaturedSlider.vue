@@ -90,8 +90,8 @@
               </svg>
             </li>
           </ul>
-          <span class="featured_products_slider_slide_price">$500</span>
-          <span class="featured_products_slider_slide_discount">$600</span>
+          <span class="featured_products_slider_slide_price">$900</span>
+          <span class="featured_products_slider_slide_discount">$1000</span>
           <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
         </div>
       </div>
@@ -130,8 +130,8 @@
               </svg>
             </li>
           </ul>
-          <span class="featured_products_slider_slide_price">$500</span>
-          <span class="featured_products_slider_slide_discount">$600</span>
+          <span class="featured_products_slider_slide_price">$400</span>
+          <span class="featured_products_slider_slide_discount">$500</span>
           <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
         </div>
       </div>
@@ -170,8 +170,328 @@
               </svg>
             </li>
           </ul>
-          <span class="featured_products_slider_slide_price">$500</span>
+          <span class="featured_products_slider_slide_price">$700</span>
+          <span class="featured_products_slider_slide_discount">$800</span>
+          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
+        </div>
+      </div>
+
+      <div class="featured_products_slider_slide">
+        <div class="featured_products_slider_slide_image">
+          <img src="../assets/img/slider/1.png" alt="image-one" />
+        </div>
+
+        <div class="featured_products_slider_slide_caption">
+          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
+          <ul class="featured_products_slider_slide_rating list-unstyled">
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+          </ul>
+          <span class="featured_products_slider_slide_price">$120</span>
+          <span class="featured_products_slider_slide_discount">$150</span>
+          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
+        </div>
+      </div>
+
+      <div class="featured_products_slider_slide">
+        <div class="featured_products_slider_slide_image">
+          <img src="../assets/img/slider/4.png" alt="image-four" />
+        </div>
+
+        <div class="featured_products_slider_slide_caption">
+          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
+          <ul class="featured_products_slider_slide_rating list-unstyled">
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+          </ul>
+          <span class="featured_products_slider_slide_price">$650</span>
+          <span class="featured_products_slider_slide_discount">$700</span>
+          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
+        </div>
+      </div>
+
+      <div class="featured_products_slider_slide">
+        <div class="featured_products_slider_slide_image">
+          <img src="../assets/img/slider/1.png" alt="image-one" />
+        </div>
+
+        <div class="featured_products_slider_slide_caption">
+          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
+          <ul class="featured_products_slider_slide_rating list-unstyled">
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+          </ul>
+          <span class="featured_products_slider_slide_price">$300</span>
+          <span class="featured_products_slider_slide_discount">$350</span>
+          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
+        </div>
+      </div>
+
+      <div class="featured_products_slider_slide">
+        <div class="featured_products_slider_slide_image">
+          <img src="../assets/img/slider/1.png" alt="image-one" />
+        </div>
+
+        <div class="featured_products_slider_slide_caption">
+          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
+          <ul class="featured_products_slider_slide_rating list-unstyled">
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+          </ul>
+          <span class="featured_products_slider_slide_price">$450</span>
+          <span class="featured_products_slider_slide_discount">$500</span>
+          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
+        </div>
+      </div>
+
+      <div class="featured_products_slider_slide">
+        <div class="featured_products_slider_slide_image">
+          <img src="../assets/img/slider/1.png" alt="image-one" />
+        </div>
+
+        <div class="featured_products_slider_slide_caption">
+          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
+          <ul class="featured_products_slider_slide_rating list-unstyled">
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+          </ul>
+          <span class="featured_products_slider_slide_price">$300</span>
+          <span class="featured_products_slider_slide_discount">$400</span>
+          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
+        </div>
+      </div>
+
+      <div class="featured_products_slider_slide">
+        <div class="featured_products_slider_slide_image">
+          <img src="../assets/img/slider/1.png" alt="image-one" />
+        </div>
+
+        <div class="featured_products_slider_slide_caption">
+          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
+          <ul class="featured_products_slider_slide_rating list-unstyled">
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+          </ul>
+          <span class="featured_products_slider_slide_price">$60</span>
+          <span class="featured_products_slider_slide_discount">$70</span>
+          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
+        </div>
+      </div>
+
+      <div class="featured_products_slider_slide">
+        <div class="featured_products_slider_slide_image">
+          <img src="../assets/img/slider/1.png" alt="image-one" />
+        </div>
+
+        <div class="featured_products_slider_slide_caption">
+          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
+          <ul class="featured_products_slider_slide_rating list-unstyled">
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+          </ul>
+          <span class="featured_products_slider_slide_price">$550</span>
           <span class="featured_products_slider_slide_discount">$600</span>
+          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
+        </div>
+      </div>
+
+      <div class="featured_products_slider_slide">
+        <div class="featured_products_slider_slide_image">
+          <img src="../assets/img/slider/4.png" alt="image-four" />
+        </div>
+
+        <div class="featured_products_slider_slide_caption">
+          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
+          <ul class="featured_products_slider_slide_rating list-unstyled">
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+            <li>
+              <svg>
+                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
+              </svg>
+            </li>
+          </ul>
+          <span class="featured_products_slider_slide_price">$700</span>
+          <span class="featured_products_slider_slide_discount">$900</span>
           <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
         </div>
       </div>
@@ -255,327 +575,6 @@
           <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
         </div>
       </div>
-
-      <div class="featured_products_slider_slide">
-        <div class="featured_products_slider_slide_image">
-          <img src="../assets/img/slider/1.png" alt="image-one" />
-        </div>
-
-        <div class="featured_products_slider_slide_caption">
-          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
-          <ul class="featured_products_slider_slide_rating list-unstyled">
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-          </ul>
-          <span class="featured_products_slider_slide_price">$500</span>
-          <span class="featured_products_slider_slide_discount">$600</span>
-          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
-        </div>
-      </div>
-
-      <div class="featured_products_slider_slide">
-        <div class="featured_products_slider_slide_image">
-          <img src="../assets/img/slider/1.png" alt="image-one" />
-        </div>
-
-        <div class="featured_products_slider_slide_caption">
-          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
-          <ul class="featured_products_slider_slide_rating list-unstyled">
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-          </ul>
-          <span class="featured_products_slider_slide_price">$500</span>
-          <span class="featured_products_slider_slide_discount">$600</span>
-          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
-        </div>
-      </div>
-
-      <div class="featured_products_slider_slide">
-        <div class="featured_products_slider_slide_image">
-          <img src="../assets/img/slider/1.png" alt="image-one" />
-        </div>
-
-        <div class="featured_products_slider_slide_caption">
-          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
-          <ul class="featured_products_slider_slide_rating list-unstyled">
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-          </ul>
-          <span class="featured_products_slider_slide_price">$500</span>
-          <span class="featured_products_slider_slide_discount">$600</span>
-          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
-        </div>
-      </div>
-
-      <div class="featured_products_slider_slide">
-        <div class="featured_products_slider_slide_image">
-          <img src="../assets/img/slider/1.png" alt="image-one" />
-        </div>
-
-        <div class="featured_products_slider_slide_caption">
-          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
-          <ul class="featured_products_slider_slide_rating list-unstyled">
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-          </ul>
-          <span class="featured_products_slider_slide_price">$500</span>
-          <span class="featured_products_slider_slide_discount">$600</span>
-          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
-        </div>
-      </div>
-
-      <div class="featured_products_slider_slide">
-        <div class="featured_products_slider_slide_image">
-          <img src="../assets/img/slider/1.png" alt="image-one" />
-        </div>
-
-        <div class="featured_products_slider_slide_caption">
-          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
-          <ul class="featured_products_slider_slide_rating list-unstyled">
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-          </ul>
-          <span class="featured_products_slider_slide_price">$500</span>
-          <span class="featured_products_slider_slide_discount">$600</span>
-          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
-        </div>
-      </div>
-
-      <div class="featured_products_slider_slide">
-        <div class="featured_products_slider_slide_image">
-          <img src="../assets/img/slider/4.png" alt="image-four" />
-        </div>
-
-        <div class="featured_products_slider_slide_caption">
-          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
-          <ul class="featured_products_slider_slide_rating list-unstyled">
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-          </ul>
-          <span class="featured_products_slider_slide_price">$500</span>
-          <span class="featured_products_slider_slide_discount">$600</span>
-          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
-        </div>
-      </div>
-
-      <div class="featured_products_slider_slide">
-        <div class="featured_products_slider_slide_image">
-          <img src="../assets/img/slider/1.png" alt="image-one" />
-        </div>
-
-        <div class="featured_products_slider_slide_caption">
-          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
-          <ul class="featured_products_slider_slide_rating list-unstyled">
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-          </ul>
-          <span class="featured_products_slider_slide_price">$500</span>
-          <span class="featured_products_slider_slide_discount">$600</span>
-          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
-        </div>
-      </div>
-
-      <div class="featured_products_slider_slide">
-        <div class="featured_products_slider_slide_image">
-          <img src="../assets/img/slider/4.png" alt="image-four" />
-        </div>
-
-        <div class="featured_products_slider_slide_caption">
-          <h4 class="featured_products_slider_slide_head">orange t-shirt</h4>
-          <ul class="featured_products_slider_slide_rating list-unstyled">
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-            <li>
-              <svg>
-                <use xlink:href="../assets/img/sprit.svg#icon-star-o" />
-              </svg>
-            </li>
-          </ul>
-          <span class="featured_products_slider_slide_price">$500</span>
-          <span class="featured_products_slider_slide_discount">$600</span>
-          <a href="#" class="featured_products_slider_slide_btn btn-primary reset-link">add card</a>
-        </div>
-      </div>
-      
     </div>
     <!-- END FEATURED PRODUCTS SLIDER INNER -->
 
@@ -603,6 +602,8 @@
 </template>
 
 <script>
+import { center } from '../main';
+
 export default {
   data() {
     return {
@@ -677,6 +678,11 @@ export default {
       }
 
       slider.style.scrollBehavior = "none";
+    },
+
+    // GET ARRAY
+    getArray() {
+      return this.$store.state.ShappingCard.arrayProducts;
     }
 
   },
@@ -843,12 +849,67 @@ export default {
       // SCROLL BEHAVIOR CONVERT SMOOTH
       slider.style.scrollBehavior = 'smooth';
 
-    }
-  },
-  watch: {
-    // SCROLL LEFT DOWN
-    scrollLeftDown() {
-      this.countSlide = 0;
+    },
+
+    // POST DATA
+    postData() {
+
+      //
+      class products {
+        constructor(product, price, imageSrc, imageAlt) {
+          this.product = product;
+          this.price = price;
+          this.imageSrc = imageSrc;
+          this.imageAlt = imageAlt;
+        }
+      }
+
+
+      const btn = document.querySelectorAll('.featured_products_slider_slide_btn');
+
+      let product = '',
+          price = '',
+          imageSrc = '',
+          imageAlt = ''
+
+      btn.forEach( cur => {
+        cur.addEventListener('click', (e) => {
+
+          // PREVENT DEFAULT
+          e.preventDefault();
+
+          const parent = e.target.parentElement.parentElement.children;
+
+          for(const curOne in parent) {
+
+            if(center.hasClass(parent[curOne], 'featured_products_slider_slide_image')) {
+
+                imageSrc = parent[curOne].children[0].src;
+                imageAlt = parent[curOne].children[0].alt;
+
+            } else if ( center.hasClass(parent[curOne], 'featured_products_slider_slide_caption') ) {
+              const parentCaption = parent[curOne].children;
+
+              for(const curTwo in parentCaption) {
+
+                  if( center.hasClass(parentCaption[curTwo], 'featured_products_slider_slide_head') ) {
+                      product = parentCaption[curTwo].textContent;
+                  } else if ( center.hasClass(parentCaption[curTwo], 'featured_products_slider_slide_price') ) {
+                      price = parentCaption[curTwo].textContent;
+                  }
+              }
+
+            }
+
+          }
+
+          const pushItems = new products(product, price, imageSrc, imageAlt);
+
+          this.getArray.push( pushItems );
+         
+        });
+      });
+
     }
   },
   mounted() {
@@ -860,6 +921,9 @@ export default {
 
     // RUNNING TOUCH DEVICE
     this.touchDevice();
+
+    // RUNNING POST DATA
+    this.postData();
   }
 };
 </script>

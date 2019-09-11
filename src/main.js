@@ -10,6 +10,26 @@ import { TweenMax, TimelineMax } from 'greensock';
 // USE VUE RESOURCE
 Vue.use(VueResource);
 
+export const center = new Vue({
+
+    methods: {
+
+        hasClass(el, className) {
+            
+            const arrayClass = el.classList;
+
+            for (const cur in arrayClass) {
+
+                if (arrayClass[cur] == className) return true
+
+            }
+
+        }
+
+    }
+
+});
+
 // DISPLAY WARNING
 Vue.config.productionTip = false;
 
