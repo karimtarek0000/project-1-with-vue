@@ -1,5 +1,5 @@
 // ASSETS
-import 'sass/style';
+import 'sass/style.scss';
 import Vue from 'vue';
 import App from './App';
 import VueResource from 'vue-resource';

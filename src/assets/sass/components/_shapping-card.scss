@@ -27,7 +27,7 @@
           user-select: none;
         }
 
-        // NAVBAR PRIMARY NAV SHAPPING BOX
+        // NAVBAR PRIMARY NAV SHAPPING BOXS
         &_boxs {
           position: absolute;
           width: 35%;
@@ -45,25 +45,37 @@
             width: 100%;
           }
 
+          // NAVBAR PRIMARY NAV SHAPPING BOXS INNER
           &_inner {
             height: 30rem;
             overflow: auto;
+
+            // RESPONSIVE
+            @include respond(tablet-p) {
+              height: 40rem;
+            }
           }
         }
 
+        // NAVBAR PRIMARY NAV SHAPPING BOX
         &_box {
           display: flex;
           position: relative;
           margin-top: 0.5em;
           height: 15rem;
 
+          // RESPONSIVE
+          @include respond(tablet-p) {
+            height: 20rem;
+          }
 
           &:not(:last-child) {
             border-bottom: 1px solid lighten($two-color, 50%);
-            padding-bottom: .5em;
+            padding-bottom: 0.5em;
           }
         }
 
+        // NAVBAR PRIMARY NAV SHAPPING BOX CLOSE
         &_close {
           position: absolute;
           @include translate("top", "right", 2%, 2%);
@@ -77,10 +89,10 @@
           font-size: 2em;
           cursor: pointer;
 
+          // RESPONSIVE
           @include respond(phone) {
             font-size: 3em;
           }
-
         }
 
         // NAVBAR PRIMARY NAV SHAPPING IMAGE
@@ -118,19 +130,23 @@
           padding: 0.8em 0;
         }
 
-        &_name_product, &_product_price {
-
+        // NAVBAR PRIMARY NAV SHAPPING NAME PRODUCT PRODUCT PRICE
+        &_name_product,
+        &_product_price {
           @include respond(phone) {
             font-size: 2em;
           }
-
         }
 
+        // NAVBAR PRIMARY NAV SHAPPING RATING
         &_rating {
+
+          // NAVBAR PRIMARY NAV SHAPPING ICONS
           &_icons {
             display: inline-block;
             fill: orange;
 
+            // NAVBAR PRIMARY NAV SHAPPING ICONS SVG
             & > svg {
               width: 15px;
               height: 15px;
@@ -138,27 +154,36 @@
           }
         }
 
+        // NAVBAR PRIMARY NAV SHAPPING ACTIONS
         &_actions {
           display: flex;
           align-items: center;
 
+          // NAVBAR PRIMARY NAV SHAPPING ACTIONS ALL DIRECT CHILD
           & > * {
             flex: 1 1 0;
           }
         }
 
+        // NAVBAR PRIMARY NAV SHAPPING TOTAL PRICE
         &_total_price {
           font-weight: 700;
 
+          // NAVBAR PRIMARY NAV SHAPPING TOTAL PRICE SPAN
           & > span {
             color: $font-color-one;
           }
         }
 
+        // NAVBAR PRIMARY NAV SHAPPING PAYMENT
         &_payment {
         }
 
-        &_total_price, &_payment {
+        // NAVBAR PRIMARY NAV SHAPPING TOTAL PRICE AND PAYMENT
+        &_total_price,
+        &_payment {
+
+          // RESPONSIVE
           @include respond(phone) {
             font-size: 1.7em;
           }

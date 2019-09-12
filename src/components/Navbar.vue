@@ -171,7 +171,8 @@ export default {
       statusClick: true,
       lang: "en",
       cur: "usd",
-      st: true
+      st: true,
+      duration: .5
     };
   },
   methods: {
@@ -249,8 +250,7 @@ export default {
 
     // ANIMATION OPTIONS LIST
     animationOptionsList(e) {
-      const childParent = e.target.closest(":not(div)").parentElement
-        .parentElement.children;
+      const childParent = e.target.closest(":not(div)").parentElement.parentElement.children;
 
       // ACCESS ELEMENT WITH FOR ES6
       for (const cur in childParent) {
@@ -266,7 +266,7 @@ export default {
 
             // CREATE ANIAMTION OPEN LIST ITEM
             TweenMax.set(element, { height: "100px", overflow: "scroll" });
-            TweenMax.from(element, 1, { height: 0, ease: Power1.easeInOut });
+            TweenMax.from(element, this.duration, { height: 0, ease: Power1.easeInOut });
           } else {
             // REMOVE CLASS ACTIVE FROM ELEMENT
             childParent[cur].classList.remove("active");
@@ -274,7 +274,7 @@ export default {
             // CREATE ANIMATION CLOSE LIST ITEM
             TweenMax.fromTo(
               element,
-              1,
+              this.duration,
               { height: "100px" },
               { height: 0, ease: Power1.easeInOut }
             );
@@ -319,7 +319,7 @@ export default {
       // CREATE ANIMATION CLOSE LIST ITEM
       TweenMax.fromTo(
         parentSelect,
-        1,
+        this.duration,
         { height: "100px" },
         { height: 0, ease: Power1.easeInOut }
       );

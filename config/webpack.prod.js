@@ -29,46 +29,24 @@ const optimization = {
 // MODULE RULES
 const _module = {
     rules: [
-        {
-            test: /\.css$/,
-            use: [
-                {
-                    loader: 'vue-style-loader'
-                },
-                {
-                    loader: MiniCssExtractPlugin.loader
-                },
-                {
-                 loader: 'css-loader?url=false',
-                 options: { sourceMap: true }   
-                },
-                {
-                    loader: 'postcss-loader',
-                    options: { sourceMap: true }
-                }
-            ]
-        },
        {
-        test: /\.(scss|sass)$/,
+        test: /\.(css|scss|sass)$/,
         exclude: /node_modules/,
         use: [
             {
                 loader: 'vue-style-loader'
             },
             {
-               loader: MiniCssExtractPlugin.loader,
+               loader: MiniCssExtractPlugin.loader
             },
             {
-                loader: 'css-loader?url=false',
-                options: { sourceMap: true }
+                loader: 'css-loader?url=false'
             },
             {
-                loader: 'postcss-loader',
-                options: { sourceMap: true }
+                loader: 'postcss-loader'
             },
             {
-                loader: 'sass-loader',
-                options: { sourceMap: true }
+                loader: 'sass-loader'
             }
         ]
        }

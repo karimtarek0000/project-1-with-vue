@@ -539,10 +539,12 @@
 
   // OUR BRANDS CONTENT
   &_content {
+    position: relative;
     display: flex;
     justify-content: space-around;
     padding-bottom: 1em;
     border-bottom: 1px solid rgba(black, 0.2);
+    overflow: hidden;
 
     // OUR BRANDS CONTENT BOX
     &_box {
@@ -687,6 +689,11 @@
       width: fit-content;
       margin: auto;
 
+       // RESPONSIVE
+       @include respond(phone) {
+        width: 100%;
+      }
+
       & label {
         display: block;
         font-size: 0.5em;
@@ -697,6 +704,7 @@
         // RESPONSIVE
         @include respond(phone) {
           font-size: 0.9em;
+          text-indent: 4rem;
         }
       }
 
@@ -722,7 +730,7 @@
         }
 
         @include respond(phone) {
-          width: 30rem;
+          width: 60%;
           font-size: 0.8em;
         }
       }
