@@ -7,10 +7,13 @@
       <use xlink:href="../assets/img/sprit.svg#icon-shopping-cart" />
     </svg>
 
-    <!-- NAVBAR PRIMARY NAV SHAPPING BOX -->
+    <!-- START NAVBAR PRIMARY NAV SHAPPING BOX -->
     <transition name="fade">
+
+      <!-- START NAVBAR PRIMARY NAV SHAPPING BOXS -->
       <div v-show="show" class="navbar_primary_nav_shapping_boxs">
 
+        <!-- NAVBAR PRIMARY NAV SHAPPING BOXS INNER -->
         <div id="shappingInner" class="navbar_primary_nav_shapping_boxs_inner">
           
           <div class="navbar_primary_nav_shapping_box" v-for="arr in arrayItems">
@@ -55,12 +58,16 @@
 
         <!-- NAVBAR PRIMARY NAV SHAPPING BOXS ACTIONS -->
         <div class="navbar_primary_nav_shapping_actions text-center text-capitalize">
-          <p class="navbar_primary_nav_shapping_total_price">total price: {{ calcAllPrice }}</p>
+          <p class="navbar_primary_nav_shapping_total_price">total price: <span>{{ calcAllPrice }}</span> </p>
           <a href="#" class="navbar_primary_nav_shapping_payment reset-link btn-primary">go to payment</a>
         </div>
 
       </div>
+      <!-- END NAVBAR PRIMARY NAV SHAPPING BOXS -->
+
     </transition>
+    <!-- END NAVBAR PRIMARY NAV SHAPPING BOX -->
+
   </div>
 </template>
 
@@ -86,7 +93,14 @@ export default {
 
     // CLOSE SHAPPING CARD
     closeShappingCard() {
-      const primaryNav = document.getElementById("primaryNav");
+
+      // ALL VARIABLE
+      const primaryNav = document.getElementById("primaryNav"),
+      shappingInner = document.getElementById('shappingInner');
+
+
+      // STOP RUNNING FUNCTION
+      if(shappingInner.childElementCount == 0) return false
 
       // TOGGLE TRUE AND FALSE
       this.show = !this.show;
@@ -101,6 +115,7 @@ export default {
 
       // ALL VARIABLES
       const shappingInner = document.getElementById('shappingInner'),
+      primaryNav = document.getElementById("primaryNav"),
       shappingInnerChildren = document.getElementById('shappingInner').children,
       closeIcon = ".navbar_primary_nav_shapping_close";
 
@@ -115,6 +130,12 @@ export default {
 
         // REMOVE INDEX FROM ARRAY
         this.arrayItems.splice(index, 1);
+
+        // IF ARRAY LENGTH EQUAL 0 WILL BE CLOSE LIST
+        if(this.arrayItems.length == 0) {
+          this.show = false;
+          primaryNav.style.overflow = "hidden";
+        }
 
       })
       

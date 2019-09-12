@@ -602,6 +602,8 @@
 </template>
 
 <script>
+
+// ALL IMPORT
 import { center } from '../main';
 
 export default {
@@ -854,7 +856,16 @@ export default {
     // POST DATA
     postData() {
 
-      //
+      // VAR BTN
+      const btn = document.querySelectorAll('.featured_products_slider_slide_btn');
+
+        // VARIABLES DATA INTO FUNCTION CONSTRUCTOR
+        let product = '',
+            price = '',
+            imageSrc = '',
+            imageAlt = ''
+
+      // FUNCTION CONSTRUCTOR OBJECT USE OVER AND OVER AGAIN
       class products {
         constructor(product, price, imageSrc, imageAlt) {
           this.product = product;
@@ -863,39 +874,45 @@ export default {
           this.imageAlt = imageAlt;
         }
       }
-
-
-      const btn = document.querySelectorAll('.featured_products_slider_slide_btn');
-
-      let product = '',
-          price = '',
-          imageSrc = '',
-          imageAlt = ''
-
+    
+      // FOR EACH ALL BTN
       btn.forEach( cur => {
+
+        // CLICK EVENT LISTENER
         cur.addEventListener('click', (e) => {
 
           // PREVENT DEFAULT
           e.preventDefault();
 
+          // PARENT ELEMENT WITH TARGET BTN CLOSE
           const parent = e.target.parentElement.parentElement.children;
 
+
+          // FOR
           for(const curOne in parent) {
 
             if(center.hasClass(parent[curOne], 'featured_products_slider_slide_image')) {
 
+                // ADD IMAGE SRC AND IMAGE ALT 
                 imageSrc = parent[curOne].children[0].src;
                 imageAlt = parent[curOne].children[0].alt;
 
             } else if ( center.hasClass(parent[curOne], 'featured_products_slider_slide_caption') ) {
+            
+              // PARENT CAPTION CHILDREN
               const parentCaption = parent[curOne].children;
 
+              // FOR
               for(const curTwo in parentCaption) {
 
                   if( center.hasClass(parentCaption[curTwo], 'featured_products_slider_slide_head') ) {
-                      product = parentCaption[curTwo].textContent;
+
+                    product = parentCaption[curTwo].textContent;
+                  
                   } else if ( center.hasClass(parentCaption[curTwo], 'featured_products_slider_slide_price') ) {
-                      price = parentCaption[curTwo].textContent;
+                  
+                    price = parentCaption[curTwo].textContent;
+                  
                   }
               }
 
@@ -903,14 +920,18 @@ export default {
 
           }
 
+          // ADD ALL DATA INTO FUNCTION CONSTRUCTOR
           const pushItems = new products(product, price, imageSrc, imageAlt);
 
+          // PUSH ALL DATA IN ARRAY STORE VUEX
           this.getArray.push( pushItems );
          
         });
+
       });
 
     }
+
   },
   mounted() {
     // RUNNING COMPUTED WIDTH SCREEN

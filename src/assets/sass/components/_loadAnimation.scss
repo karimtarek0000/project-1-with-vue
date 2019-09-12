@@ -1,0 +1,33 @@
+// LOAD ANIMATION
+.load_animation {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include translate('top', 'right', 0, 0);
+    width: 100%;
+    height: 100%;
+    background-color: $eight-color;
+    z-index: 400;
+
+    // LOAD ANIMATION INNER
+    &_inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 50%;
+
+        // LOAD ANIMATION INNER LI 
+        & > li {
+            width: 4%;
+            height: 5rem;
+            background-color: $first-color;
+
+            // LOAD ANIMATION INNER LI :NOT LAST CHILD
+            &:not(:last-child) {
+                margin-right: 3rem;
+            }
+        }
+    }
+}

@@ -1,13 +1,22 @@
 <template>
   <div>
+
     <!-- APP NAVBAR -->
     <app-navbar v-if="!hideNavbar"></app-navbar>
 
-    <!-- VIEW ROUTER -->
-    <router-view></router-view>
+    <main>
+
+      <!-- VIEW ROUTER -->
+      <router-view></router-view>
+      
+    </main>
 
     <!-- FOOTER -->
     <app-footer></app-footer>
+
+    <!-- LOAD ANIMATION -->
+    <app-load-animation></app-load-animation>
+
   </div>
 </template>
 
@@ -15,6 +24,7 @@
 // ALL IMPORT
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import LoadAnimation from "./components/LoadAnimation";
 
 export default {
   computed: {
@@ -26,7 +36,8 @@ export default {
   },
   components: {
     appNavbar: Navbar,
-    appFooter: Footer
+    appFooter: Footer,
+    appLoadAnimation: LoadAnimation
   }
 };
 </script>

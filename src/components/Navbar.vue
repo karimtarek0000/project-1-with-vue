@@ -22,7 +22,7 @@
               <!-- NAVBAR PRIMARY INFO EMAIL -->
               <p class="navbar_primary_info_content_email text-capitalize">
                 email:
-                <span>free@psdfreebies.com</span>
+                <span class="text-lowercase">free@psdfreebies.com</span>
               </p>
             </div>
 

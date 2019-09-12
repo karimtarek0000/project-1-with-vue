@@ -11,7 +11,7 @@ export const store = new Vuex.Store({
     state: {
         navbarItems: ["/", "shop", "product", "blog", "portfolio", "page"],
         arrayLang: ["en", "fr", "ar", "co"],
-        arrayCur: ["egp", "usd", "eur"]
+        arrayCur: ["egp", "usd", "eur", "test", "test"]
     },
     modules: {
         ShappingCard

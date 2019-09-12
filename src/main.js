@@ -10,12 +10,14 @@ import { TweenMax, TimelineMax } from 'greensock';
 // USE VUE RESOURCE
 Vue.use(VueResource);
 
+// CENTER
 export const center = new Vue({
 
     methods: {
 
+        // HAS CLASS
         hasClass(el, className) {
-            
+
             const arrayClass = el.classList;
 
             for (const cur in arrayClass) {
